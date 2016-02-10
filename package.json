@@ -1,0 +1,23 @@
+{
+  "name": "tesla",
+  "version": "0.1.0",
+  "description": "Student redisgn of Tesla's interface",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSniezak/tesla.git"
+  },
+  "author": "Paul Sniezak <paulsniezak@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSniezak/tesla/issues"
+  },
+  "homepage": "https://github.com/PSniezak/tesla#readme"
+}
