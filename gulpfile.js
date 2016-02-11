@@ -1,21 +1,33 @@
-var gulp = require('gulp');
-var handlebars = require('gulp-handlebars');
-var wrap = require('gulp-wrap');
-var declare = require('gulp-declare');
-var concat = require('gulp-concat');
+var gulp       = require('gulp'),
+    handlebars = require('gulp-handlebars'),
+    wrap       = require('gulp-wrap'),
+    declare    = require('gulp-declare'),
+    watch      = require('gulp-watch'),
+    sass      = require('gulp-sass'),
+    concat     = require('gulp-concat');
+
 
 var source = {
     path: 'source/',
     templates: 'source/templates/*.hbs',
     scripts: 'source/scripts/*.js',
-    vendors: 'source/vendors/*.js'
+    vendors: 'source/vendors/*.js',
+    sass:    'source/sass/*.scss'
 };
 
 var dist = {
     path: 'dist/',
-    scripts: 'dist/scripts/'
+    scripts: 'dist/scripts/',
+    stylesheets: 'dist/stylesheets/'
 }
 
+// Listen changes /watch
+gulp.task('watch', function() {
+  gulp.watch( source.vendors, ['js_libs']);
+  gulp.watch( source.scripts, ['js_app']);
+  gulp.watch( source.sass, ['sass']);
+  gulp.watch( source.templates, ['bhs']);
+});
 
 // Templates HBS
 gulp.task('hbs', function() {
@@ -44,4 +56,14 @@ gulp.task('js_libs', function() {
         .pipe(gulp.dest(dist.scripts));
 });
 
-gulp.task('default', ['hbs', 'js_app', 'js_libs']);
+// SASS
+gulp.task('sass', function(){
+  return gulp.src(source.sass)
+        .pipe(sass({
+          indentedSyntax: false
+        }))
+        .pipe(concat("style.css"))
+        .pipe(gulp.dest(dist.stylesheets))
+});
+
+gulp.task('default', ['hbs', 'js_app', 'js_libs', 'sass','watch']);

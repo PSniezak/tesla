@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Tesla</title>
+    <link rel="stylesheet" href="dist/stylesheets/style.css">
 </head>
 <body>
     <div id="global">
-        <div id="header"></div>
+        <div id="header">
+            <h1>Coucou le header</h1>
+        </div>
 
         <div id="music"></div>
 
@@ -18,11 +21,19 @@
 
         <div id="energy"></div>
 
-        <div id="footer"></div>
+        <div id="footer">
+            <p>Hello le footer</p>
+        </div>
     </div>
 
     <script src="dist/scripts/vendors.js"></script>
     <script src="dist/scripts/templates.js"></script>
     <script src="dist/scripts/app.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Initialise the new app
+        var app = new App();
+    });
+    </script>
 </body>
 </html>
