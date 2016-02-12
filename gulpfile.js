@@ -19,7 +19,7 @@ var source = {
     scripts:    'source/scripts/*.js',
     vendors:    'source/vendors/*.js',
     sass:       'source/sass/**/*.*',
-    images:      'source/images/*.{gif,jpg,png,svg}'
+    images:     'source/images/*.{gif,jpg,png,svg}'
 };
 
 var dist = {

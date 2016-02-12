@@ -4,6 +4,10 @@ $(document).ready(function() {
 
 var App = function() {
 
+	particlesJS.load('particles-js', 'assets/particles.json', function() {
+		console.log('= PARTICLES DONE =');
+	});
+
 	this.tpl = templates;
 
 	this.header = $('#header');
