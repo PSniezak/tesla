@@ -1,6 +1,6 @@
 /* ---------- Base imports ---------- */
 
-	@import "reset";
+@import "reset";
 
 /* ---------- Vars ---------- */
 
@@ -12,5 +12,10 @@
 
 /* ---------- Imports ---------- */
 
-	@import "views/header";
-	@import "views/footer";
+@import "views/header";
+@import "views/music";
+@import "views/gps";
+@import "views/phone";
+@import "views/browser";
+@import "views/energy";
+@import "views/footer";
