@@ -90,5 +90,5 @@ gulp.task('watch', function() {
     gulp.watch(source.vendors, ['js_libs']);
     gulp.watch(source.scripts, ['js_app']);
     gulp.watch(source.sass, ['sass']);
-    gulp.watch(source.templates, ['bhs']);
+    gulp.watch(source.templates, ['hbs']);
 });

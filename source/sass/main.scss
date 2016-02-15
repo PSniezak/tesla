@@ -1,14 +1,23 @@
 /* ---------- Base imports ---------- */
 
 @import "reset";
+@import "fonts";
 @import "layout";
 
 /* ---------- Vars ---------- */
 
+$font-color: #f9f9f9;
+$white-1: rgba(249, 249, 249, 0.1);
+$white-2: rgba(249, 249, 249, 0.2);
+$white-6: rgba(249, 249, 249, 0.6);
 
+$avenir-light : 'Avenir Light';
+$avenir-lightoblique: 'Avenir-LightOblique';
 
 /* ---------- Common styles ---------- */
 
+div { box-sizing: border-box;}
+p { color: $font-color; }
 
 /* ---------- Imports ---------- */
 

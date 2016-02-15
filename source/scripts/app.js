@@ -9,14 +9,16 @@ var App = function() {
 	});
 
 	this.tpl = templates;
+	this.widget = {};
 
-	this.header = $('#header');
-	this.music = $('#music');
-	this.gps = $('#gps');
-	this.phone = $('#phone');
-	this.browser = $('#browser');
-	this.energy = $('#energy');
-	this.footer = $('#footer');
+	// Bind cards
+	this.divHeader = $('#header');
+	this.divMusic = $('#music');
+	this.divGps = $('#gps');
+	this.divPhone = $('#phone');
+	this.divBrowser = $('#browser');
+	this.divEnergy = $('#energy');
+	this.divFooter = $('#footer');
 
 	this.bind();
 
@@ -31,6 +33,11 @@ App.prototype.init = function() {
 	this.loadTemplates();
 
 	console.log('= INIT DONE =');
+
+	// Initialise new classes / Call js for each widget
+	
+	this.widget.music = new Music(); 
+
 };
 
 
@@ -44,13 +51,13 @@ App.prototype.loadTemplates = function() {
 
 	console.log('= LOADING TEMPLATES =');
 
-	this.header.append(this.tpl.header);
-	this.music.append(this.tpl.music);
-	this.gps.append(this.tpl.gps);
-	this.phone.append(this.tpl.phone);
-	this.browser.append(this.tpl.browser);
-	this.energy.append(this.tpl.energy);
-	this.footer.append(this.tpl.footer);
+	this.divHeader.append(this.tpl.header);
+	this.divMusic.append(this.tpl.music);
+	this.divGps.append(this.tpl.gps);
+	this.divPhone.append(this.tpl.phone);
+	this.divBrowser.append(this.tpl.browser);
+	this.divEnergy.append(this.tpl.energy);
+	this.divFooter.append(this.tpl.footer);
 
 	console.log('= TEMPLATES DONE =');
 };
