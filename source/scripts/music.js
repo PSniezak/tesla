@@ -64,6 +64,7 @@ Music.prototype.bind = function() {
 
 // 
 // CELLE CI NE SERT A RIEN POUR L'INSTANT FUTUR SLIDE DAN FAVORITES OU RADIO PAR EXEMPLE
+// OKAY MEC
 // 
 Music.prototype.slideContent = function(e) {
 	e.preventDefault();
