@@ -14,6 +14,8 @@ var App = function() {
 	// Bind cards
 	this.divHeader = $('#header');
 	this.divMusic = $('#music');
+	this.divMusicMin = $('#music-min');
+
 	this.divGps = $('#gps');
 	this.divPhone = $('#phone');
 	this.divBrowser = $('#browser');
@@ -52,7 +54,9 @@ App.prototype.loadTemplates = function() {
 	console.log('= LOADING TEMPLATES =');
 
 	this.divHeader.append(this.tpl.header);
+
 	this.divMusic.append(this.tpl.music);
+	this.divMusicMin.append(this.tpl.musicMin);
 	this.divGps.append(this.tpl.gps);
 	this.divPhone.append(this.tpl.phone);
 	this.divBrowser.append(this.tpl.browser);

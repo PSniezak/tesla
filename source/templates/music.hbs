@@ -1,10 +1,10 @@
 <div class="content">
     <div class="nav-aside nav-6">
         <ul>
-            <li class="active"><a href="item-1"><img src="assets/icons/radio.png" alt="radio icon"></a></li>
+            <li><a href="item-1"><img src="assets/icons/radio.png" alt="radio icon"></a></li>
             <li><a href="item-2"><img src="assets/icons/internet.png" alt="internet icon"></a></li>
             <li><a href="item-3"><img src="assets/icons/music.png" alt="music icon"></a></li>
-            <li><a href="item-4"><img src="assets/icons/favorites.png" alt="favorites icon"></a></li>
+            <li class="active"><a href="item-4"><img src="assets/icons/favorites.png" alt="favorites icon"></a></li>
             <li><a href="item-5"><img src="assets/icons/playlists.png" alt="playlists icon"></a></li>
             <li><a href="item-6"><img src="assets/icons/history.png" alt="history icon"></a></li>
         </ul>
@@ -13,14 +13,14 @@
 		<!-- MAIN PANEL -->
 		
     <div class="main" id="main-radio">
-      <div class="nav-top">
+      <div class="nav-top slide">
       	<ul>
       		<li><a class="active" href="#">FM</a></li>
       		<li><a href="#">AM</a></li>
       		<li><a href="#">XM</a></li>
       	</ul>
       </div>
-      <div class="radio-player">
+      <div class="radio-player slide-container">
         <div class="fav">
         	<a href=""><img src="assets/icons/fav-large.png" alt=""></a>
         </div>
@@ -62,7 +62,24 @@
       </div>
     </div>
 
-    <div class="main show" id="main-my-music">
+    <div class="main" id="main-my-music">
+    	<div class="top-device-bar">
+    		<a href="#" class="phone-drop"><img src="assets/icons/phone.png" alt=""></a>
+    		<div class="drop-down">
+    			<ul>
+    				<li class="active"><a href=""><span>Julien's Phone</span><img src="assets/icons/synchronise.png" alt=""></a></li>
+    				<li><a href=""><span>Paul's Huawei</span></a></li>
+    			</ul>
+    			<span class="add-device"><a href="#">Add a device</a></span>
+    		</div>
+    		<span class="blur"></span>
+    		<div class="search-nav">
+    			<form action="#" method="/">
+    				<input type="search" class="search-nav-input">
+    				<button type="submit" class="search-nav-button"><img src="assets/icons/search.png" alt=""></button>
+    			</form>
+    		</div>
+    	</div>
     	<div class="nav-top">
     		<ul>
     			<li><a class="active" href="#">Tracks</a></li>
@@ -73,71 +90,171 @@
       <div class="music-explorer">
         <ul>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-1-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-1-small.png" alt=""></span>
         		<span class="song-name">HACID</span>
         		<span class="artist">Steve Cook</span>
         		<span class="album"></span>
         		<span class="duration">6:47</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-2-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-2-small.png" alt=""></span>
         		<span class="song-name">Highhouse</span>
         		<span class="artist">Pit Spector</span>
         		<span class="album">Menibar EP</span>
         		<span class="duration">5:53</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-3-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-3-small.png" alt=""></span>
         		<span class="song-name">Man with the red face</span>
         		<span class="artist">Laurent Garnier</span>
         		<span class="album">The man with the red face</span>
         		<span class="duration">6:42</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-4-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-4-small.png" alt=""></span>
         		<span class="song-name">Ringleader</span>
         		<span class="artist">Shigeto</span>
         		<span class="album">Gostly</span>
         		<span class="duration">6:01</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-5-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-5-small.png" alt=""></span>
         		<span class="song-name">The dub transe</span>
         		<span class="artist">Pfirter</span>
         		<span class="album"></span>
         		<span class="duration">8:56</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-6-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-6-small.png" alt=""></span>
         		<span class="song-name">Turbular bell</span>
         		<span class="artist">Chris Liebing</span>
         		<span class="album">Clr</span>
         		<span class="duration">11:09</span>
         	</li>
         	<li>
-        		<span class="song-cover"><img src="assets/images/cover-7-small.png" alt=""></span>
+        		<span class="song-cover"><img src="../assets/images/cover-7-small.png" alt=""></span>
         		<span class="song-name">Weldiya</span>
         		<span class="artist">Abdulla Rashim</span>
         		<span class="album"></span>
         		<span class="duration">8:41</span>
         	</li>
+        	<li>
+        		<span class="song-cover"><img src="../assets/images/cover-4-small.png" alt=""></span>
+        		<span class="song-name">Ringleader</span>
+        		<span class="artist">Shigeto</span>
+        		<span class="album">Gostly</span>
+        		<span class="duration">6:01</span>
+        	</li>
         </ul>
       </div>
     </div>
 
-    <div class="main" id="main-favorite">
-    	<p>Favorite</p>
-      <div class="music-explorer">
-        <ul>
-        	<li>
-        		<img src="" alt="">
-        		<span class="song-name">September</span>
-        		<span class="artist">Steve Cook</span>
-        		<span class="album"></span>
-        		<span class="duration">4:47</span>
-        	</li>
-        </ul>
-      </div>
+    <div class="main show" id="main-favorite">
+      <div class="nav-top slide">
+    		<ul>
+    			<li><a class="active" href="#">Radio</a></li>
+    			<li><a href="#">My music</a></li>
+    			<li><a href="#">Internet</a></li>
+    		</ul>
+    	</div>
+    	<div class="favorite-list slide-container">
+    		<ul class="open">
+    			<li>
+    				<span><img src="assets/icons/nova-logo.png" alt=""></span>
+    				<p>Radio nova</p>
+    				<p>101.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/tsf-jazz-logo.png" alt=""></span>
+    				<p>Tsf jazz</p>
+    				<p>98.3</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/france-inter-logo.png" alt=""></span>
+    				<p>France inter</p>
+    				<p>89.1</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rtl-logo.png" alt=""></span>
+    				<p>Rtl</p>
+    				<p>109.7</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rmc-logo.png" alt=""></span>
+    				<p>Rmc</p>
+    				<p>10.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/neo-logo.png" alt=""></span>
+    				<p>Neo</p>
+    				<p>91.9</p>
+    			</li>
+    		</ul>
+    		<ul>
+    			<li>
+    				<span><img src="assets/icons/nova-logo.png" alt=""></span>
+    				<p>Radio nova</p>
+    				<p>101.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/tsf-jazz-logo.png" alt=""></span>
+    				<p>Tsf jazz</p>
+    				<p>98.3</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/france-inter-logo.png" alt=""></span>
+    				<p>France inter</p>
+    				<p>89.1</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rtl-logo.png" alt=""></span>
+    				<p>Rtl</p>
+    				<p>109.7</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rmc-logo.png" alt=""></span>
+    				<p>Rmc</p>
+    				<p>10.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/neo-logo.png" alt=""></span>
+    				<p>Neo</p>
+    				<p>91.9</p>
+    			</li>
+    		</ul>
+    		<ul>
+    			<li>
+    				<span><img src="assets/icons/nova-logo.png" alt=""></span>
+    				<p>Radio nova</p>
+    				<p>101.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/tsf-jazz-logo.png" alt=""></span>
+    				<p>Tsf jazz</p>
+    				<p>98.3</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/france-inter-logo.png" alt=""></span>
+    				<p>France inter</p>
+    				<p>89.1</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rtl-logo.png" alt=""></span>
+    				<p>Rtl</p>
+    				<p>109.7</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/rmc-logo.png" alt=""></span>
+    				<p>Rmc</p>
+    				<p>10.5</p>
+    			</li>
+    			<li>
+    				<span><img src="assets/icons/neo-logo.png" alt=""></span>
+    				<p>Neo</p>
+    				<p>91.9</p>
+    			</li>
+    		</ul>
+    	</div>
     </div>
 
     <div class="main" id="main-playlist">
@@ -226,6 +343,33 @@
 		        <div class="fav-details">
 	            <p class="title">Classic piano</p>
 	            <p class="artist">Chez damier</p>
+		        </div>
+	        </a>
+  	    </li>
+  	    <li>
+  	    	<a href="#">
+	        	<span><img src="assets/icons/tsf-jazz-logo.png" alt="radio logo"></span>
+		        <div class="fav-details">
+	            <p class="title">The bluest blues</p>
+	            <p class="artist">AVin lee</p>
+		        </div>
+	        </a>
+  	    </li>
+  	    <li>
+  	    	<a href="#">
+	        	<span><img src="assets/icons/rtl-logo.png" alt="radio logo"></span>
+		        <div class="fav-details">
+	            <p class="title">Light scent of decay</p>
+	            <p class="artist">Session victim</p>
+		        </div>
+	        </a>
+  	    </li>
+  	    <li>
+  	    	<a href="#">
+	        	<span><img src="assets/icons/rmc-logo.png" alt="radio logo"></span>
+		        <div class="fav-details">
+	            <p class="title">The story about you</p>
+	            <p class="artist">Mommin</p>
 		        </div>
 	        </a>
   	    </li>

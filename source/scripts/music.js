@@ -9,6 +9,7 @@ var Music = function() {
 		nav: this.musicPlayer.find('.nav-top'),
 		items: this.musicPlayer.find('.nav-top li')
 	}
+	this.dropDown = this.musicPlayer.find('.phone-drop');
 
 	this.radio = {
 		player: $('.radio-player'),
@@ -19,6 +20,11 @@ var Music = function() {
 		frequence: $('.radio-player .frequence-number'),
 		cursor: $('.radio-player .cursor')
 	};
+
+	this.musicSlides = {
+		nav: this.musicPlayer.find('.nav-top.slide'),
+		items: this.musicPlayer.find('.nav-top.slide li')
+	}
 
 	// Init app
 	this.init();
@@ -44,10 +50,38 @@ Music.prototype.bind = function() {
 	// Radio controls
 	this.radio.controls.prev.on('click', $.proxy(this.frequenceRadio, this, 'prev'));
 	this.radio.controls.next.on('click', $.proxy(this.frequenceRadio, this, 'next'));
+	
+	// Drop down panel
+	this.dropDown.on('click', $.proxy(this.openDropDown, this));
+
+	// Slide in radio, favorites....
+	this.musicSlides.items.on('click', $.proxy(this.slideContent, this));
 
 	// Top nav bar
 	this.navTop.items.on('click', $.proxy(this.changeMode, this));
 
+};
+
+// 
+// CELLE CI NE SERT A RIEN POUR L'INSTANT FUTUR SLIDE DAN FAVORITES OU RADIO PAR EXEMPLE
+// 
+Music.prototype.slideContent = function(e) {
+	e.preventDefault();
+
+	var list = $('.slide-container .open'),
+			next = $('.slide-container ul:nth-child('+ Math.floor(Math.random() * 3 + 1)+')');
+
+	$('.slide-container').find('ul').removeClass('open');
+	next.addClass('open');
+	
+};
+
+
+Music.prototype.openDropDown = function(e) {
+	e.preventDefault();
+
+	$(e.target).toggleClass('active');
+	this.musicPlayer.find('.drop-down').toggleClass('open');
 };
 
 Music.prototype.changeMode = function(e) {
