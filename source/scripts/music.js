@@ -82,12 +82,13 @@ Music.prototype.openDropDown = function(e) {
 
 	$(e.target).toggleClass('active');
 	this.musicPlayer.find('.drop-down').toggleClass('open');
+	this.musicPlayer.find('.blur').toggleClass('show');
+
 };
 
 Music.prototype.changeMode = function(e) {
 	e.preventDefault();
 
-	console.log($(e.target));
 	this.navTop.items.find('a').removeClass('active');
 	$(e.target).addClass('active');
 
