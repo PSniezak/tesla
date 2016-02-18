@@ -2,11 +2,123 @@
 
 #header {
   .content {
+    
+    display: flex;
     width: 1160px;
     height: 60px;
-    border: 1px solid white;
     margin-bottom: 20px;
+    line-height: 60px;
+    padding: 0 50px;
+    border: 1px solid white;
+    font-size: $size14;
+    font-family: $avenir-book;
+    color: $font-color;
+		
+		.left {
+
+			.time {
+				
+				display: inline-block;
+				text-transform: uppercase;
+				margin-right: 50px;
+
+			}
+
+			.battery {
+
+				display: inline-block;
+
+				.charge {
+
+					float: left;
+					margin-right: 5px;
+
+				}
+
+				.bar {
+
+					position: relative;
+					display: inline-block;
+					width: 25px;
+					height: 10px;
+					top: 1px;
+					border: 1px solid $font-color;
+					overflow: hidden;
+
+					&:after {
+						position: absolute;
+						content: '';
+						right: -3px;
+						top: 2px;
+						width: 2px;
+						height: 6px;
+						background-color: $font-color;
+					}
+
+					.progress {
+
+						position: relative;
+						display: block;
+						width: 26px;
+						left: -14px;
+						height: 100%;
+						background-color: #b4e8fe;
+						transition: all .3s ease;
+
+						&:after {
+
+							position: absolute;
+							content: '';
+							right: -4px;
+							width: 0;
+							height: 0;
+							border-bottom: 10px solid #b4e8fe;
+							border-right: 4px solid transparent;
+
+						}
+
+					}
+				}
+
+			}
+
+		}
+
+		.tesla-logo {
+			flex: 1;
+			text-align: center;
+		}
+
+		.right {
+
+			img{margin-top: 17px;}
+
+			.bluetooth {
+
+				display: inline-block;
+				margin-right: 40px;
+			
+			}
+
+			.network {
+
+				display: inline-block;
+				margin-right: 20px;
+				img{margin-right: 5px;}
+
+			}
+
+			.weather {
+
+				display: inline-block;
+				span{ margin-right: 5px; }
+
+			}
+
+		}
+
   }
+
 }
 
 /* @end HEADER */
