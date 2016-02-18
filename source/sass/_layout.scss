@@ -33,6 +33,13 @@ body {
     height: 720px;
     margin-bottom: 18px;
     border: 1px solid #fff;
+
+    .main-active {
+      display: block;
+    }
+    .not-active {
+      display: none;
+    }
   }
 
   #snd-tile {
@@ -44,6 +51,16 @@ body {
       width: 570px;
       height: 410px;
       border: 1px solid #fff;
+
+      &.snd-hidden {
+        display: none;
+      }
+      
+      .box {
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .snd-1, .snd-2 {
@@ -53,7 +70,7 @@ body {
     .snd-left {
       float: left;
     }
-    
+
     .snd-right {
       float: right;
     }
