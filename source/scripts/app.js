@@ -17,7 +17,9 @@ var App = function() {
 	this.divMusic = $('#music');
 	this.divMusicMin = $('#music-min');
 
-	this.divGps = $('#gps-min');
+	this.divGps = $('#gps');
+	this.divGpsMin = $('#gps-min');
+
 	this.divPhone = $('#phone-min');
 	this.divBrowser = $('#browser-min');
 	this.divEnergy = $('#energy-min');
@@ -41,6 +43,7 @@ App.prototype.init = function() {
 	// Initialise new classes / Call js for each widget
 	
 	this.widget.music = new Music(); 
+	this.widget.gps = new Gps();
 
 };
 
