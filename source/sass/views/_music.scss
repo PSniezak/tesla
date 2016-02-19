@@ -7,91 +7,8 @@
 	color: $font-color;
 
   .content {
-
-		position: relative;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-align-items: stretch;
-		    -ms-flex-align: stretch;
-		        align-items: stretch;
-  	height: 100%;
-  	padding: 20px 0;
-
-  	.nav-aside {
-  				
-			position: relative;
-			width: 9%;
-			margin: 20px 0;
-  		border-right: 1px solid $white-2;
-
-  		&:after,
-  		&:before {
-
-  			position: absolute;
-  			content: '';
-  			right: -1px;
-  			height: 20px;
-  			width: 1px;
-  			background: $white-2;
-  			
-  		}
-
-  		&:before {
-
-  			top: -20px;
-		    background: -webkit-gradient(bottom right,top right,color-stop(0,$white-2),color-stop(100%,hsla(5,26%,83%,0)));
-		    background: -webkit-linear-gradient(bottom,$white-2,hsla(5,26%,83%,0));
-
-  		}
-
-  		&:after {
-
-  			bottom: -20px;
-		    background: -webkit-gradient(top right,bottom right,color-stop(0,$white-2),color-stop(100%,hsla(5,26%,83%,0)));
-		    background: -webkit-linear-gradient(top,$white-2,hsla(5,26%,83%,0));
-
-  		}
-
-			&.nav-6 {
-				ul {
-					margin-top: 60%;
-				}
-			}
-
-			ul {
-
-				li {
-					height: calc(100%/6);
-					text-align: center;
-					transition: all .3s ease;
-
-					&.active {
-						background-color: rgba(249, 249, 249, 0.05);
-					}
-
-					a{
-
-						padding: 25px 0;
-						display: block;
-
-					}
-
-				}
-
-			}
   	
-  	}
-
   	.main {
-			
-			position: relative;
-			display: none;
-  		width: 66%;
-  		padding-top: 20px;
-  		overflow: hidden;
-
-			&.show { display: block; }
 
   		&#main-radio {padding: 20px 70px 0;}
   		&#main-my-music {
@@ -694,55 +611,6 @@
   	}
 
   	.right-list {
-
-  		position: relative;
-			display: none;
-  		width: 25%;
-  		margin: 20px 0;
-  		padding: 0 0 30px;
-  		font-size: $size14;
-  		border-left: 1px solid $white-2;
-  		
-
-  		&.show { display: block; }
-
-  		&:after,
-  		&:before {
-
-  			position: absolute;
-  			content: '';
-  			left: -1px;
-  			height: 20px;
-  			width: 1px;
-  			background: $white-2;
-  			
-  		}
-
-  		&:before {
-
-  			top: -20px;
-		    background: -webkit-gradient(bottom left,top left,color-stop(0,$white-2),color-stop(100%,hsla(5,26%,83%,0)));
-		    background: -webkit-linear-gradient(bottom,$white-2,hsla(5,26%,83%,0));
-
-  		}
-
-  		&:after {
-
-  			bottom: -20px;
-		    background: -webkit-gradient(top left,bottom left,color-stop(0,$white-2),color-stop(100%,hsla(5,26%,83%,0)));
-		    background: -webkit-linear-gradient(top,$white-2,hsla(5,26%,83%,0));
-
-  		}
-
-  		.right-title {
-
-				height: 80px;
-				line-height: 80px;
-  			font-size: $size14;
-  			text-transform: uppercase;
-  			text-align: center;
-
-  		}
 
 			ul {
 
