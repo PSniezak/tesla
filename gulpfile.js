@@ -84,6 +84,7 @@ gulp.task('image_min', function() {
 
 // Build
 gulp.task('build', ['hbs', 'js_app', 'js_libs', 'sass', 'image_min']);
+gulp.task('default',['sass','hbs','watch']);
 
 // Watch
 gulp.task('watch', function() {
