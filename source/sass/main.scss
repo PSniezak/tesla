@@ -2,7 +2,6 @@
 
 @import "reset";
 @import "fonts";
-@import "layout";
 
 /* ---------- Vars ---------- */
 
@@ -25,6 +24,8 @@ div { box-sizing: border-box;}
 p { color: $font-color; }
 
 /* ---------- Imports ---------- */
+
+@import "layout";
 
 @import "views/header";
 @import "views/music";
