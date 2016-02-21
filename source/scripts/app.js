@@ -14,16 +14,23 @@ var App = function() {
 
 	// Bind cards
 	this.divHeader = $('#header');
+
 	this.divMusic = $('#music');
-	this.divMusicMin = $('.musicMin');
+	this.divMusicMin = $('#music-min');
 
 	this.divGps = $('#gps');
 	this.divGpsMin = $('#gps-min');
 
-	this.divPhone = $('#phone-min');
-	this.divBrowser = $('#browser-min');
-	this.divEnergy = $('#energy-min');
-	this.divFooter = $('#footer-min');
+	this.divPhone = $('#phone');
+	this.divPhoneMin = $('#phone-min');
+
+	this.divBrowser = $('#browser');
+	this.divBrowserMin = $('#browser-min');
+
+	this.divEnergy = $('#energy');
+	this.divEnergyMin = $('#energy-min');
+
+	this.divFooter = $('#footer');
 
 	this.bind();
 
@@ -66,16 +73,21 @@ App.prototype.loadTemplates = function() {
 
 	this.divHeader.append(this.tpl.header);
 
-	if(this.divMusicMin.length==1){
-		this.divMusicMin.append(this.tpl.musicMin);
-	}
-	else{
-		this.divMusic.append(this.tpl.music);
-	}
+	this.divMusic.append(this.tpl.music);
+	this.divMusicMin.append(this.tpl.musicMin);
+
 	this.divGps.append(this.tpl.gps);
+	this.divGpsMin.append(this.tpl.gpsMin);
+
 	this.divPhone.append(this.tpl.phone);
+	this.divPhoneMin.append(this.tpl.phoneMin);
+
 	this.divBrowser.append(this.tpl.browser);
+	this.divBrowserMin.append(this.tpl.browserMin);
+
 	this.divEnergy.append(this.tpl.energy);
+	this.divEnergyMin.append(this.tpl.energyMin);
+
 	this.divFooter.append(this.tpl.footer);
 
 	console.log('= TEMPLATES DONE =');
