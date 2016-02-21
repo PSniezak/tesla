@@ -13,7 +13,7 @@
 
   		&#main-navigation {
 
-        .navigation-informations {
+        .nav-informations {
 
           position: absolute;
           top: 10px;
@@ -22,11 +22,113 @@
           font-size: 22px;
 
           span:first-child {
+            vertical-align: top;
             margin-left: 20px;
+          }
+          span:nth-child(2) {
+
+            display: inline-block;
+            margin-left: 32%;
+
+            img{
+              margin-bottom: 20px;
+            }
+            p{
+              font-size: 22px;
+              text-transform: uppercase;
+            }
           }
           span:last-child {
             float: right;
             margin-right: 20px;
+          }
+        }
+
+        .nav-controls {
+
+          position: absolute;
+          right: 20px;
+          top: 20%;
+          z-index: 5;
+
+          a {
+            position: relative;
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 95px;
+            border-radius: 50%;
+            background-color: $white-2;
+          }
+
+          a:first-child {
+
+            &:before,
+            &:after{
+              position: absolute;
+              content: '';
+              top: 29px;
+              left: 15px;
+              width: 30px;
+              height: 2px;
+              background-color: $font-color;
+            }
+            &:after {
+              transform: rotate(90deg);
+            }
+          }
+
+          a:nth-child(2) {
+
+            &:before {
+              position: absolute;
+              content: '';
+              top: 29px;
+              left: 15px;
+              width: 30px;
+              height: 2px;
+              background-color: $font-color;
+            }
+          }
+
+          a:last-child {
+           
+            img {
+              display: block;
+              padding-top: 15px;
+              height: 30px;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .map-container {
+
+          margin-top: 100px;
+
+          .bg {
+            height: 100%;
+            transform: scale(1);
+            transition: all .4s ease; 
+          }
+        }
+
+        .nav-user {
+          position: absolute;
+          bottom: 10px;
+          left: 49%;
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          box-shadow: 0px 0px 20px 6px $white-1;
+          border: 1px solid $white-2;
+          background-color: rgba(2, 21, 30, 0.4);
+          transform: translateX(-50%);
+          img {
+
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
           }
         }
         
@@ -83,14 +185,6 @@
 
   			}
 
-  		}
-
-  		.map-container {
-
-  			img {
-  				height: 100%;
-  				
-  			}
   		}
 
   		.music-explorer {
@@ -208,6 +302,64 @@
   	}
 
   	.right-list {
+
+      .navigation {
+
+        overflow: hidden;
+        
+        .head-map {
+
+          position: relative;
+          display: block;
+          height: 280px;
+          width: 100%;
+
+          .nav-user {
+            position: absolute;
+            bottom: -20px;
+            left: 49%;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px 6px $white-1;
+            border: 1px solid $white-2;
+            background-color: rgba(2, 21, 30, 0.4);
+            transform: translateX(-50%);
+            img {
+
+              display: block;
+              margin: 0 auto;
+              margin-top: 20px;
+            }
+          }
+        }
+
+        .bottom-info {
+          text-align: center;
+          padding-top: 60px;
+
+          span {
+            display: block;
+          }
+
+          span:first-child {
+
+            margin: 0 auto;
+            margin-bottom: 50px;
+
+            img{
+              margin-bottom: 20px;
+            }
+            p{
+              font-size: 26px;
+              text-transform: uppercase;
+            }
+          }
+          span:last-child {
+            margin-top: 30px;
+          }
+        }
+      }
 
   	}
 

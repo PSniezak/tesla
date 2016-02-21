@@ -153,14 +153,14 @@ body {
 
           position: relative;
           display: none;
-          width: 25%;
-          margin: 20px 0;
+          width: 0%;
+          margin: 0 0 20px;
           padding: 0 0 30px;
           font-size: $size14;
           border-left: 1px solid $white-2;
-          
+          transition: all .7s ease;
 
-          &.show { display: block; }
+          &.show { display: block; width: 25%;}
 
           &:after,
           &:before {
