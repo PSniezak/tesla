@@ -58,12 +58,30 @@ App.prototype.init = function() {
 // Bind buttons/events
 App.prototype.bind = function() {
 	var that = this;
+
 	this.boxes.on('addDropped', function() {
+		console.log('swapping');
 		that.swapTiles($(this), $('.main-active'));
 	});
-	this.boxes.on('removeDropped', function() {
-		console.log('deswap');
+
+	this.boxes.on('dragging', function() {
+		console.log('drag animation');
+		that.dragAnim($(this));
 	});
+
+	this.boxes.on('removeDragging', function() {
+		console.log('Remove drag animation');
+		that.dragAnimRemove($(this));
+	});
+
+	this.boxes.on('highlighted', function() {
+		console.log('hightlighted');
+		that.prepareDrop($(this), $('.main-active'));
+	});
+
+	//this.boxes.on('removeDropped', function() {
+	//	console.log('deswap');
+	//});
 };
 
 // Load HBS templates
@@ -109,6 +127,7 @@ App.prototype.loadDraggable = function() {
 	var mainDrag = Draggable.create(droppables, {
 		bounds: window,
 		onPress: function () {
+			$(this.target).trigger('dragging');
 			this.startX = 0;
 			this.startY = 0;
 			$(this.target).css('transform', 'translate3d(0px, 0, 0px)');
@@ -120,7 +139,7 @@ App.prototype.loadDraggable = function() {
 		},
 		onDrag: function (e) {
 			if (this.hitTest(dropArea, overlapThreshold)) {
-				$(this.target).addClass("highlight");
+				$(this.target).addClass("highlight").trigger('highlighted');
 			} else {
 				$(this.target).removeClass("highlight");
 			}
@@ -133,6 +152,7 @@ App.prototype.loadDraggable = function() {
 			}
 		},
 		onDragEnd: function (e) {
+			$(this.target).trigger('removeDragging');
 			if (!$(this.target).hasClass("highlight")) {
 				if ($(this.target).hasClass('dropped')) {
 					$(this.target).removeClass('dropped').trigger('removeDropped');
@@ -145,6 +165,11 @@ App.prototype.loadDraggable = function() {
 			} else {
 				posX = this.startX;
 				posY = this.startY;
+
+				TweenLite.to(this.target, 0.2, {
+					x: this.startX,
+					y: this.startY
+				})
 				$(this.target).removeClass("highlight");
 				$(this.target).addClass('dropped').trigger('addDropped');
 				$(this.target).removeClass('deleteSample');
@@ -158,25 +183,49 @@ App.prototype.loadDraggable = function() {
 
 // Swapping tiles
 App.prototype.swapTiles = function($min, $max) {
+	$('#overlay-main').css('opacity', 0);
+
 	var maxTileId = $max.attr('id');
-	$('#' + maxTileId + '-min').css('transform', 'translate3d(0px, 0, 0px)');
+	var $maxTileIdMin = $('#' + maxTileId + '-min');
+	$maxTileIdMin.css('transform', 'translate3d(0px, 0, 0px)');
 
 	// Swap big tile
 	var getBig= $min.attr('id').substr(0, $min.attr('id').indexOf('-'));
 	getBig = '#' + getBig;
-	$($max).fadeOut('fast');
-	$($max).removeClass('main-active').addClass('not-active');
-	$(getBig).fadeIn('fast');
-	$(getBig).removeClass('not-active').addClass('main-active');
+	$($max).fadeOut('fast', function() {
+		$(getBig).fadeIn('fast');
+	});
+	setTimeout(function() {
+		$($max).removeClass('main-active').addClass('not-active');
+		$(getBig).removeClass('not-active').addClass('main-active');
+	}, 500);
 
 	// Hide actual min tile
 	$($min).fadeOut('fast');
 
 	// Fetch and display right content in the empty small slot
 	var emptySlot = $min.parent().data('id');
-	$('#' + maxTileId + '-min').appendTo($('.' + emptySlot));
-	$('#' + maxTileId + '-min').css('display', 'block');
+	$maxTileIdMin.appendTo($('.' + emptySlot));
+	$maxTileIdMin.css('display', 'block');
 
 	// Move the ancient small slot (so the actual big one) to the snd-hidden
 	$min.appendTo($('.snd-hidden'));
+};
+
+// Add a filter to the dragged element
+App.prototype.dragAnim = function($tile) {
+	var filterVal = 'blur(2px)';
+	$tile.css('filter',filterVal).css('webkitFilter',filterVal);
+};
+
+// Remove the filter from a dragged element
+App.prototype.dragAnimRemove = function($tile) {
+	var filterVal = '';
+	$tile.css('filter',filterVal).css('webkitFilter',filterVal);
+};
+
+// Highlight both the dragged tile and the main container to prepare dropped
+App.prototype.prepareDrop = function($tile, $main) {
+	// Faire apparaitre une grosse div noir en overlay
+	$('#overlay-main').css('opacity', 1);
 };
