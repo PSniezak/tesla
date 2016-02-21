@@ -8,7 +8,14 @@ var Gps = function() {
 	this.navTop = {
 		nav: this.gps.find('.nav-top'),
 		items: this.gps.find('.nav-top li')
-	}
+	};
+	this.map = this.gps.find('.map-container');
+	this.map.controls = {
+		in: this.gps.find('.nav-controls a.zoom-in'),
+		out: this.gps.find('.nav-controls a.zoom-out')
+	};
+
+	this.zoomCounter = 0;
 
 	// Init app
 	this.init();
@@ -36,6 +43,35 @@ Gps.prototype.bind = function() {
 	
 	this.menuItems.on('click', $.proxy(this.navMenu, this));
 
+	// Fake zoom in an out on the map
+	this.map.controls.in.on('click', $.proxy(this.zoomIn, this));
+	this.map.controls.out.on('click', $.proxy(this.zoomOut, this));
+};
+
+
+Gps.prototype.zoomIn = function(e) {
+	e.preventDefault();
+
+	var currentScale = this.map.find('img.bg').css('transform');
+
+	this.map.find('img').css('transform','scale(1.'+this.zoomCounter+1+')');
+
+	this.zoomCounter++;
+};
+
+Gps.prototype.zoomOut = function(e) {
+	e.preventDefault();
+
+	var currentScale = this.map.find('img.bg').css('transform');
+
+	if(this.zoomCounter > 0){
+		this.zoomCounter--;	
+	}
+
+	console.log(this.zoomCounter)
+
+	this.map.find('img').css('transform','scale(1.'+this.zoomCounter+')');
+	
 };
 
 
