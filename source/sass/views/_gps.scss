@@ -13,9 +13,25 @@
 
   		&#main-navigation {
 
-        width: 100% !important;
+        .navigation-informations {
+
+          position: absolute;
+          top: 10px;
+          left: 0;
+          right: 0;
+          font-size: 22px;
+
+          span:first-child {
+            margin-left: 20px;
+          }
+          span:last-child {
+            float: right;
+            margin-right: 20px;
+          }
+        }
         
   		}
+
   		&#main-search {
   			.nav-top { margin-bottom: 40px; }
   		}
