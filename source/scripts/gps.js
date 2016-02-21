@@ -19,6 +19,11 @@ Gps.prototype.init = function() {
 	
 	this.bind();
 
+	if(this.gps.find('#main-navigation').hasClass('show')){
+		this.gps.find('.right-list').removeClass('show');
+		this.gps.find('#main-navigation').css('width','100%');
+	}
+
 };
 
 
@@ -49,6 +54,14 @@ Gps.prototype.navMenu = function(e) {
 	var panelId = this.selectPanel(clickedItem);
 
 	if(panelId) {
+
+		if(panelId === 'main-navigation') {
+			this.gps.find('.right-list').removeClass('show');
+			this.gps.find('#'+panelId+'').css('width', '100%');
+		} else {
+			this.gps.find('.right-list').addClass('show');
+		}
+
 		this.gps.find('.main').removeClass('show');
 		this.gps.find('#'+panelId+'').addClass('show');
 
