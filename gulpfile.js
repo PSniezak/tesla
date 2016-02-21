@@ -10,7 +10,8 @@ var gulp        = require('gulp'),
     autop       = require('autoprefixer'),
     cssnano     = require('gulp-cssnano'),
     imagemin    = require('gulp-imagemin'),
-    pngquant    = require('imagemin-pngquant');
+    pngquant    = require('imagemin-pngquant'),
+    plumber     = require('gulp-plumber');
 
 
 var source = {
@@ -46,6 +47,11 @@ gulp.task('hbs', function() {
 // JS app
 gulp.task('js_app', function() {
     gulp.src(source.scripts)
+        .pipe(plumber({
+            errorHandler: function (error) {
+                console.log(error.message);
+                this.emit('end');
+            }}))
         .pipe(concat("app.js"))
         .pipe(uglify())
         .pipe(gulp.dest(dist.scripts));
@@ -62,6 +68,11 @@ gulp.task('js_libs', function() {
 // SASS
 gulp.task('sass', function() {
   return gulp.src(source.sass)
+      .pipe(plumber({
+          errorHandler: function (error) {
+              console.log(error.message);
+              this.emit('end');
+          }}))
       .pipe(sass({
           indentedSyntax: false
       }))
