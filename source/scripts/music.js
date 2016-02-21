@@ -174,6 +174,9 @@ Music.prototype.selectPanel = function(elem) {
 		case 'item-6' :
 			return 'main-history';
 			break;
+		case 'item-7' :
+			return 'main-settings';
+			break;
 		default: 
 			return false;
 	}
