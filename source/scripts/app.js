@@ -169,6 +169,7 @@ App.prototype.loadDraggable = function() {
 					x: this.startX,
 					y: this.startY
 				})
+
 				$(this.target).removeClass("highlight").trigger('removeDragging');
 				$(this.target).addClass('dropped').trigger('addDropped');
 				$(this.target).removeClass('deleteSample');
@@ -193,7 +194,7 @@ App.prototype.swapTiles = function($min, $max) {
 	var getBig= $min.attr('id').substr(0, $min.attr('id').indexOf('-'));
 	getBig = '#' + getBig;
 	$($max).fadeOut('fast', function() {
-		$(getBig).fadeIn('fast');
+		$(getBig).fadeIn('slow');
 	});
 	setTimeout(function() {
 		$($max).removeClass('main-active').addClass('not-active');
@@ -206,7 +207,7 @@ App.prototype.swapTiles = function($min, $max) {
 	// Fetch and display right content in the empty small slot
 	var emptySlot = $min.parent().data('id');
 	$maxTileIdMin.appendTo($('.' + emptySlot));
-	$maxTileIdMin.fadeIn('fast');
+	$maxTileIdMin.fadeIn('slow');
 
 	// Move the ancient small slot (so the actual big one) to the snd-hidden
 	$min.appendTo($('.snd-hidden'));
@@ -222,7 +223,6 @@ App.prototype.dragAnim = function($tile) {
 App.prototype.dragAnimRemove = function($tile) {
 	var filterVal = '';
 	$tile.css('filter',filterVal).css('webkitFilter',filterVal);
-	console.log('salut');
 };
 
 // Highlight both the dragged tile and the main container to prepare dropped
