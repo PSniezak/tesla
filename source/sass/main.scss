@@ -21,7 +21,13 @@ $avenir-book : 'Avenir Book';
 /* ---------- Common styles ---------- */
 
 div { box-sizing: border-box;}
-p { color: $font-color; }
+p {
+	color: $font-color;
+	font-family: $avenir-light;
+}
+a{
+	font-family: $avenir-light;
+}
 
 /* ---------- Imports ---------- */
 
