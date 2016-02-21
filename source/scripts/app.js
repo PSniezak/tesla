@@ -60,22 +60,18 @@ App.prototype.bind = function() {
 	var that = this;
 
 	this.boxes.on('addDropped', function() {
-		console.log('swapping');
 		that.swapTiles($(this), $('.main-active'));
 	});
 
 	this.boxes.on('dragging', function() {
-		console.log('drag animation');
 		that.dragAnim($(this));
 	});
 
 	this.boxes.on('removeDragging', function() {
-		console.log('Remove drag animation');
 		that.dragAnimRemove($(this));
 	});
 
 	this.boxes.on('highlighted', function() {
-		console.log('hightlighted');
 		that.prepareDrop($(this), $('.main-active'));
 	});
 
@@ -126,6 +122,9 @@ App.prototype.loadDraggable = function() {
 
 	var mainDrag = Draggable.create(droppables, {
 		bounds: window,
+		onClick: function() {
+			$(this.target).removeClass("highlight").trigger('removeDragging');
+		},
 		onPress: function () {
 			$(this.target).trigger('dragging');
 			this.startX = 0;
@@ -170,7 +169,7 @@ App.prototype.loadDraggable = function() {
 					x: this.startX,
 					y: this.startY
 				})
-				$(this.target).removeClass("highlight");
+				$(this.target).removeClass("highlight").trigger('removeDragging');
 				$(this.target).addClass('dropped').trigger('addDropped');
 				$(this.target).removeClass('deleteSample');
 			}
@@ -184,6 +183,7 @@ App.prototype.loadDraggable = function() {
 // Swapping tiles
 App.prototype.swapTiles = function($min, $max) {
 	$('#overlay-main').css('opacity', 0);
+	$('#overlay-main').css('display', 'none');
 
 	var maxTileId = $max.attr('id');
 	var $maxTileIdMin = $('#' + maxTileId + '-min');
@@ -206,7 +206,7 @@ App.prototype.swapTiles = function($min, $max) {
 	// Fetch and display right content in the empty small slot
 	var emptySlot = $min.parent().data('id');
 	$maxTileIdMin.appendTo($('.' + emptySlot));
-	$maxTileIdMin.css('display', 'block');
+	$maxTileIdMin.fadeIn('fast');
 
 	// Move the ancient small slot (so the actual big one) to the snd-hidden
 	$min.appendTo($('.snd-hidden'));
@@ -222,10 +222,12 @@ App.prototype.dragAnim = function($tile) {
 App.prototype.dragAnimRemove = function($tile) {
 	var filterVal = '';
 	$tile.css('filter',filterVal).css('webkitFilter',filterVal);
+	console.log('salut');
 };
 
 // Highlight both the dragged tile and the main container to prepare dropped
 App.prototype.prepareDrop = function($tile, $main) {
 	// Faire apparaitre une grosse div noir en overlay
+	$('#overlay-main').css('display', 'block');
 	$('#overlay-main').css('opacity', 1);
 };
