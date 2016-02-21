@@ -122,6 +122,9 @@ App.prototype.loadDraggable = function() {
 
 	var mainDrag = Draggable.create(droppables, {
 		bounds: window,
+		onClick: function() {
+			$(this.target).removeClass("highlight").trigger('removeDragging');
+		},
 		onPress: function () {
 			$(this.target).trigger('dragging');
 			this.startX = 0;
@@ -166,7 +169,7 @@ App.prototype.loadDraggable = function() {
 					x: this.startX,
 					y: this.startY
 				})
-				$(this.target).removeClass("highlight");
+				$(this.target).removeClass("highlight").trigger('removeDragging');
 				$(this.target).addClass('dropped').trigger('addDropped');
 				$(this.target).removeClass('deleteSample');
 			}
@@ -219,6 +222,7 @@ App.prototype.dragAnim = function($tile) {
 App.prototype.dragAnimRemove = function($tile) {
 	var filterVal = '';
 	$tile.css('filter',filterVal).css('webkitFilter',filterVal);
+	console.log('salut');
 };
 
 // Highlight both the dragged tile and the main container to prepare dropped
