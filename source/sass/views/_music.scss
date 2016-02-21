@@ -766,12 +766,6 @@
 		
 		.main{
 
-			&#main-radio {
-				padding: 0px 70px 0;
-				.nav-top{
-					margin-bottom:20px;
-				}
-			}
 			&#main-my-music {
 				padding-top: 0px;
 				margin-left:auto;
@@ -783,7 +777,46 @@
 			}
 
 			.nav-top {
+				display: block;
+				width: 100%;
+				font-size: 22px;
+				margin-bottom: 80px;
 
+				ul {
+
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-justify-content: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					width: 100%;
+
+					li {
+
+						-webkit-flex: 1;
+						-ms-flex: 1;
+						flex: 1;
+						text-align: center;
+
+						a {
+
+							position: relative;
+							text-decoration: none;
+							color: $font-color;
+							background-size: 0%	1px;
+							background-position: 50% 95%;
+							background-image: linear-gradient(to bottom, transparent 50%, $font-color 50%);
+							background-repeat: no-repeat;
+							transition: all .3s ease;
+
+							&.active { background-size: 100% 1px; }
+
+						}
+
+					}
+
+				}
 			}
 
 			.music-explorer {
