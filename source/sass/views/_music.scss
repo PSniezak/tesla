@@ -32,6 +32,185 @@
 				}
 			}
 
+			&#main-music-player {
+
+				.music-player {
+
+					position: relative;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-justify-content: space-between;
+					-ms-flex-pack: justify;
+					justify-content: space-between;
+
+					.fav {
+						position: absolute;
+						top: 10px;
+						left: 40px;
+						a {
+							display: block;
+							img{
+								width:75%;
+							}
+						}
+					}
+					.playlists {
+						position: absolute;
+						top: 20px;
+						right: 40px;
+						img{
+							width:75%;
+						}
+					}
+
+					.player {
+						-webkit-flex: 1;
+						-ms-flex: 1;
+						flex: 1;
+						text-align: center;
+
+						margin-top: 50px;
+
+						.cover {
+
+							position: relative;
+							margin: auto;
+							width: 200px;
+							height: 200px;
+							margin-bottom: 35px;
+							line-height: 225px;
+							border: 1px solid $font-color;
+							box-shadow: 0px 0px 100px 40px $white-1;
+							border-radius: 50%;
+							z-index: 1;
+
+							&:before {
+								position: absolute;
+								content: '';
+								left: 0;
+								width: 197px;
+								height: 197px;
+								border: 1px solid #ffa7bb;
+								opacity: 1;
+								border-radius: 50%;
+								z-index: 2;
+							}
+						}
+
+						.infos {
+
+							text-transform: uppercase;
+
+							.music-name {
+								font-size: 22px;
+								margin-bottom: 15px;
+							}
+							.music-song {
+								font-size: 20px;
+								color: $white-6; 
+								span {
+									display: block;
+									margin-bottom: 15px;
+								}
+							}
+						}
+
+						.controls {
+
+							margin-top: 45px;
+
+							.frequence-bar {
+
+								position: relative;
+								margin-bottom: 40px;
+
+								.bar {
+
+									position: relative;
+									width: 300px;
+									height: 2px;
+									margin: 0 auto;
+									margin-bottom: 20px;
+									text-align: center;
+									background-color: $white-2;
+
+									span {
+										position: absolute;
+										content: '';
+										left: 0;
+										height: 2px;
+										width: 200px;
+										background: -webkit-linear-gradient(left ,#ffa7bb, $font-color);
+										transition: all 3s ease;
+									}
+
+								}
+
+								.start-time,
+								.end-time {
+									position: absolute;
+									top: -5px;
+									font-family: $avenir-book;
+									font-size: 14px;
+								}
+
+								.start-time {
+									left: 180px;
+								}
+								.end-time {
+									right: 180px;
+								}
+
+								p {
+									font-size: 20px;
+									color: $white-6;
+								}
+
+							}
+
+							.next-prev {
+
+								width: 80%;
+								margin: 0 auto;
+
+								.playlist{
+									a{
+										img{
+											margin-top:-5px;
+										}
+									}	
+								}
+
+								span {
+									
+									line-height: 70px;
+									/*background-color: $white-1;
+									border-radius: 50%;*/
+									display: inline-block;
+									vertical-align: middle;
+
+									a { 
+										display: block; 
+										img{ 
+											margin-left:auto;
+											margin-right: auto;
+											
+											display: block; 
+										} 
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+				}
+			}
+
 			.top-device-bar {
 
 				position: absolute;
@@ -611,6 +790,168 @@
 		}
 
 		.right-list {
+
+			&#my-music-list {
+
+				.music-player {
+
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-justify-content: space-between;
+					-ms-flex-pack: justify;
+					justify-content: space-between;
+
+					margin-top: 50px;
+
+					.player {
+
+						-webkit-flex: 1;
+
+						-ms-flex: 1;
+
+						flex: 1;
+						text-align: center;
+
+						.cover {
+
+							position: relative;
+							margin: auto;
+							width: 135px;
+							height: 135px;
+							margin-bottom: 35px;
+							line-height: 150px;
+							border: 1px solid $font-color;
+							box-shadow: 0px 0px 100px 40px $white-1;
+							border-radius: 50%;
+							z-index: 1;
+
+							&:before {
+								position: absolute;
+								content: '';
+								left: 0;
+								width: 132px;
+								height: 132px;
+								border: 1px solid #ffa7bb;
+								opacity: 1;
+								border-radius: 50%;
+								z-index: 2;
+							}
+						}
+
+						.infos {
+
+							text-transform: uppercase;
+
+							.music-name {
+								font-size: 16px;
+								margin-bottom: 15px;
+							}
+							.music-song {
+								font-size: 14px;
+								color: $white-6;
+								span {
+									display: block;
+									margin-bottom: 10px;
+								}
+							}
+						}
+
+						.controls {
+
+							margin-top: 55px;
+
+							.frequence-bar {
+
+								position: relative;
+								margin-bottom: 80px;
+
+								.bar {
+
+									position: relative;
+									width: 200px;
+									height: 2px;
+									margin: 0 auto;
+									margin-bottom: 20px;
+									text-align: center;
+									background-color: $white-2;
+
+									span {
+										position: absolute;
+										content: '';
+										left: 0;
+										height: 2px;
+										width: 120px;
+										background: -webkit-linear-gradient(left ,#ffa7bb, $font-color);
+										transition: all 3s ease;
+									}
+
+								}
+
+								.start-time,
+								.end-time {
+									position: absolute;
+									top: -20px;
+									font-family: $avenir-book;
+									font-size: 14px;
+								}
+
+								.start-time {
+									left: 30px;
+								}
+								.end-time {
+									right: 30px;
+								}
+
+								p {
+									font-size: 20px;
+									color: $white-6;
+								}
+
+							}
+
+							.next-prev {
+
+								width: 80%;
+								margin: 0 auto;
+
+								span:nth-child(2) {
+									a{
+										img{
+											margin-top:-5px;
+										}
+									}	
+								}
+
+								span {
+
+									display: inline-block;
+									width: 70px;
+									height: 70px;
+									line-height: 70px;
+									/*background-color: $white-1;
+									border-radius: 50%;*/
+
+									a { 
+										display: block; 
+										img{ 
+											margin-left:auto;
+											margin-right: auto;
+											margin-top:10px;
+											display: block; 
+										} 
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+				}
+
+			}
 
 			ul {
 

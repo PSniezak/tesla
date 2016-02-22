@@ -150,7 +150,7 @@
       </div>
     </div>
 
-    <div class="main show" id="main-favorite">
+    <div class="main" id="main-favorite">
       <div class="nav-top slide">
     		<ul>
     			<li><a class="active" href="#">Radio</a></li>
@@ -347,9 +347,41 @@
         <p>Settings</p>
     </div>
 
+    <div class="main show" id="main-music-player">
+        <div class="music-player">
+            <div class="fav">
+                <a href=""><img src="assets/icons/fav-large.png" alt=""></a>
+            </div>
+            <div class="player">
+                <div class="cover">
+                    <span><img src="assets/icons/nova-logo-large.png" alt="radio logo"></span>
+                </div>
+
+                <div class="infos">
+                    <p class="music-name">The great gig in the sky</p>
+                    <p class="music-song"><span>Pink Floyd</span><span>Dark side of the moon</span></p>
+                </div>
+
+                <div class="controls">
+                    <div class="frequence-bar">
+                        <span class="start-time">2:14</span>
+                        <span class="end-time">4:22</span>
+                        <div class="bar"><span class="playing-progress"></span></div>
+                    </div>
+                    <div class="next-prev">
+                        <span><a href="#"><img src="assets/icons/prev-large.png" alt=""></a></span>
+                        <span class="playlist"><a href="#"><img src="assets/icons/pause-large.png" alt=""></a></span>
+                        <span><a href="#"><img src="assets/icons/next-large.png" alt=""></a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="playlists"><img src="assets/icons/playlists.png" alt=""></div>
+        </div>
+    </div>
+
 		<!-- RIGHT LISTS -->
 
-    <div class="right-list show" id="fav-list">
+    <div class="right-list" id="fav-list">
     	<p class="right-title">Favorites radios</p>
     	<ul>
   	    <li>
@@ -436,18 +468,33 @@
     	</ul>
     </div>
 
-    <div class="right-list" id="my-music-list">
+    <div class="right-list show" id="my-music-list">
     	<p class="right-title">Playing</p>
-    	<div class="player">
-    		<div class="cover">
-    			<span><img src="assets/icons/nova-logo-large.png" alt="radio logo"></span>
-    		</div>
-    		<div class="infos">
-    			<p class="song-name">The great gig in the sky</p>
-    			<p class="song-artist">Pink floyd</p>
-    			<p class="song-album">Dark side of the moon</p>
-    		</div>
-    	</div>
+    	<div class="music-player">
+            <div class="player">
+                <div class="cover">
+                    <span><img src="assets/icons/nova-logo-large.png" alt="radio logo"></span>
+                </div>
+
+                <div class="infos">
+                    <p class="music-name">The great gig in the sky</p>
+                    <p class="music-song"><span>Pink Floyd</span><span>Dark side of the moon</span></p>
+                </div>
+
+                <div class="controls">
+                    <div class="frequence-bar">
+                        <span class="start-time">2:14</span>
+                        <span class="end-time">4:22</span>
+                        <div class="bar"><span class="playing-progress"></span></div>
+                    </div>
+                    <div class="next-prev">
+                        <span><a href="#"><img src="assets/icons/prev.png" alt=""></a></span>
+                        <span class=""><a href="#"><img src="assets/icons/pause.png" alt=""></a></span>
+                        <span><a href="#"><img src="assets/icons/next.png" alt=""></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     </div>

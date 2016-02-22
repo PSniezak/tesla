@@ -135,6 +135,15 @@ Music.prototype.navMenu = function(e) {
 	var panelId = this.selectPanel(clickedItem);
 
 	if(panelId) {
+
+		if(panelId == "main-radio") {
+			this.musicPlayer.find('.right-list').removeClass('show');
+			this.musicPlayer.find('.right-list#fav-list').addClass('show');
+		} else {
+			this.musicPlayer.find('.right-list').removeClass('show');
+			this.musicPlayer.find('.right-list#my-music-list').addClass('show');
+		}
+
 		this.musicPlayer.find('.main').removeClass('show');
 		this.musicPlayer.find('#'+panelId+'').addClass('show');
 
