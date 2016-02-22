@@ -11,7 +11,8 @@ var gulp        = require('gulp'),
     cssnano     = require('gulp-cssnano'),
     imagemin    = require('gulp-imagemin'),
     pngquant    = require('imagemin-pngquant'),
-    plumber     = require('gulp-plumber');
+    plumber     = require('gulp-plumber'),
+    changed     = require('gulp-changed');
 
 
 var source = {
@@ -34,6 +35,7 @@ var dist = {
 gulp.task('hbs', function() {
     return gulp.src(source.templates)
         .pipe(handlebars())
+        .pipe(changed( dist.scripts ))
         .pipe(wrap('Handlebars.template(<%= contents %>)'))
         .pipe(declare({
             namespace: 'templates',
@@ -52,6 +54,7 @@ gulp.task('js_app', function() {
                 console.log(error.message);
                 this.emit('end');
             }}))
+        .pipe(changed( dist.scripts ))
         .pipe(concat("app.js"))
         .pipe(uglify())
         .pipe(gulp.dest(dist.scripts));
@@ -67,19 +70,19 @@ gulp.task('js_libs', function() {
 
 // SASS
 gulp.task('sass', function() {
-  return gulp.src(source.sass)
-      .pipe(plumber({
-          errorHandler: function (error) {
-              console.log(error.message);
-              this.emit('end');
-          }}))
-      .pipe(sass({
-          indentedSyntax: false
-      }))
-      .pipe(concat("style.css"))
-      .pipe(postcss([ autop({ browsers: ['last 2 versions'] }) ]))
-      .pipe(cssnano())
-      .pipe(gulp.dest(dist.styles));
+    return gulp.src(source.sass)
+        .pipe(plumber({
+            errorHandler: function (error) {
+                console.log(error.message);
+                this.emit('end');
+            }}))
+        .pipe(changed( dist.styles ))
+        .pipe(sass({
+            indentedSyntax: false
+        }))
+        .pipe(concat("style.css"))
+        .pipe(cssnano())
+        .pipe(gulp.dest(dist.styles));
 });
 
 // Image minifier
@@ -95,7 +98,7 @@ gulp.task('image_min', function() {
 
 // Build
 gulp.task('build', ['hbs', 'js_app', 'js_libs', 'sass', 'image_min']);
-gulp.task('default',['hbs', 'js_app', 'js_libs', 'sass', 'image_min', 'watch']);
+gulp.task('default',['hbs', 'js_app', 'sass']);
 
 // Watch
 gulp.task('watch', function() {

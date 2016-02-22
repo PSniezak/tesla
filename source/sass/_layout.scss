@@ -7,6 +7,35 @@ body {
   overflow-x: hidden;
 }
 
+// Loader
+#starsLoader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  opacity: 0;
+}
+
+#starsLoader #starsLoader_canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#starsLoader #starsLoader_label {
+  position: absolute;
+  top: 49%;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+// Particles
 #particles-js {
   position: absolute;
   width: 100%;

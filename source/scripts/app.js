@@ -44,8 +44,18 @@ App.prototype.init = function() {
 
 	this.loadTemplates();
 	this.loadDraggable();
+	//this.loadSortable();
+	//
 
 	console.log('= INIT DONE =');
+
+	$(window).load(function(){
+		setTimeout(function() {
+			$('.loader-container').fadeOut('slow',function(){
+				$(this).remove();
+			});
+		}, 3600);
+	});
 
 	// Initialise new classes / Call js for each widget
 	
@@ -231,3 +241,19 @@ App.prototype.prepareDrop = function($tile, $main) {
 	$('#overlay-main').css('display', 'block');
 	$('#overlay-main').css('opacity', 1);
 };
+
+//App.prototype.loadSortable = function() {
+//	console.log('= LOADING SORTABLE =');
+//	$('.sortable-container').sortable({
+//
+//		// axis: x or y
+//		axis: 'x',
+//
+//		// container
+//		containment: 'parent',
+//
+//		// animation speed
+//		animation: 150,
+//	});
+//	console.log('= SORTABLE DONE =');
+//};
