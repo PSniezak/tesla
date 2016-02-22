@@ -48,6 +48,14 @@ body {
   }
 }
 
+#borders {
+  position: absolute;
+  z-index: 1;
+  width: 1200px;
+  height: 1920px;
+  background-image: url('/assets/images/borders.png');
+}
+
 #global {
   position: absolute;
   z-index: 9;
@@ -58,8 +66,8 @@ body {
   #prm-tile {
     width: 1160px;
     height: 720px;
-    margin-bottom: 18px;
-    border: 1px solid #fff;
+    margin-bottom: 20px;
+    position: relative;
 
     #overlay-main {
       position: absolute;
@@ -106,6 +114,7 @@ body {
           width: 9%;
           margin: 20px 0;
           border-right: 1px solid $white-2;
+          z-index: 100;
 
           &:after,
           &:before {
@@ -254,7 +263,6 @@ body {
     .snd {
       width: 570px;
       height: 410px;
-      border: 1px solid #fff;
 
       &.snd-hidden {
         display: none;
@@ -421,8 +429,6 @@ body {
                   background-image: linear-gradient(to bottom, transparent 50%, $font-color 50%);
                   background-repeat: no-repeat;
                   transition: all .3s ease;
-
-                  &.active { background-size: 100% 1px; }
 
                 }
 

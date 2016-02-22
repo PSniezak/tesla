@@ -20,6 +20,10 @@
           right: 0;
           font-size: 22px;
 
+          span {
+            font-family: $avenir-light;
+          }
+
           span:first-child {
             vertical-align: top;
             margin-left: 20px;
@@ -340,6 +344,7 @@
 
           span {
             display: block;
+            font-family: $avenir-light;
           }
 
           span:first-child {
@@ -383,8 +388,9 @@
           top: 10px;
           left: 0;
           right: 0;
-          font-size: 14px;
+          font-size: 18px;
           color: $font-color;
+          font-family: $avenir-light;
 
           span {
             vertical-align: top;
@@ -396,7 +402,7 @@
           span:nth-child(2) {
 
             display: inline-block;
-            margin-left: 32%;
+            margin-left: 18%;
 
             img{
               margin-bottom: 20px;

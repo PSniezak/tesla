@@ -4,7 +4,7 @@ var Music = function() {
 
 	this.musicPlayer = $('#music');
 	this.menu = $('#music .nav-aside');
-	this.menuItems = this.menu.find('a');
+	this.menuItems = $("#global #prm-tile #music .content .nav-aside ul li");
 	this.navTop = {
 		nav: this.musicPlayer.find('.nav-top'),
 		items: this.musicPlayer.find('.nav-top li')
@@ -130,7 +130,13 @@ Music.prototype.navMenu = function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 
-	var clickedItem = $(e.target).parent().attr('href');
+	if($(e.target).is('img')) {
+		var clickedItemWaiting = $(e.target).parent();
+	} else {
+		var clickedItemWaiting = $(e.target);
+	}
+
+	var clickedItem = clickedItemWaiting.attr('href');
 
 	var panelId = this.selectPanel(clickedItem);
 
@@ -148,8 +154,8 @@ Music.prototype.navMenu = function(e) {
 		this.musicPlayer.find('#'+panelId+'').addClass('show');
 
 		// Add active for selected panel icon
-		this.menuItems.parent().removeClass('active');
-		$(e.target).parent().parent().addClass('active');
+		this.menuItems.prev().removeClass('active');
+		clickedItemWaiting.parent().addClass('active');
 	}
 
 };
