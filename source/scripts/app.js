@@ -42,19 +42,17 @@ App.prototype.init = function() {
 
 	console.log('= INIT =');
 
+	this.loader();
 	this.loadTemplates();
 	this.loadDraggable();
 	//this.loadSortable();
-	//
 
 	console.log('= INIT DONE =');
 
 	$(window).load(function(){
 		setTimeout(function() {
-			$('.loader-container').fadeOut('slow',function(){
-				$(this).remove();
-			});
-		}, 3600);
+			$('#global').fadeIn('slow');
+		}, 4200);
 	});
 
 	// Initialise new classes / Call js for each widget
@@ -237,9 +235,47 @@ App.prototype.dragAnimRemove = function($tile) {
 
 // Highlight both the dragged tile and the main container to prepare dropped
 App.prototype.prepareDrop = function($tile, $main) {
-	// Faire apparaitre une grosse div noir en overlay
 	$('#overlay-main').css('display', 'block');
 	$('#overlay-main').css('opacity', 1);
+};
+
+// Loader
+App.prototype.loader = function() {
+	// Percentage Increment Animation
+	setTimeout(function() {
+		$('#loading-percent').fadeIn('fast', function() {
+			setTimeout(function() {
+				var PercentageID = $("#loading-percent"),
+					start = 1,
+					end = 100,
+					durataion = 2000;
+				animateValue(PercentageID, start, end, durataion);
+
+				function animateValue(id, start, end, duration) {
+
+					var range = end - start,
+						current = start,
+						increment = end > start? 1 : -1,
+						stepTime = Math.abs(Math.floor(duration / range)),
+						obj = $(id);
+
+					var timer = setInterval(function() {
+						current += increment;
+						$(obj).text(current + "%");
+						//obj.innerHTML = current;
+						if (current == end) {
+							clearInterval(timer);
+						}
+					}, stepTime);
+				}
+
+				setTimeout(function() {
+					$('#loading').fadeOut('slow');
+				}, 2000);
+			}, 100);
+		});
+	}, 1600);
+
 };
 
 //App.prototype.loadSortable = function() {
