@@ -34,15 +34,14 @@ var dist = {
 // Templates HBS
 gulp.task('hbs', function() {
     return gulp.src(source.templates)
-        .pipe(handlebars())
         .pipe(changed( dist.scripts ))
+        .pipe(handlebars())
         .pipe(wrap('Handlebars.template(<%= contents %>)'))
         .pipe(declare({
             namespace: 'templates',
             noRedeclare: true
         }))
         .pipe(concat('templates.js'))
-        .pipe(uglify())
         .pipe(gulp.dest(dist.scripts));
 });
 
@@ -54,9 +53,7 @@ gulp.task('js_app', function() {
                 console.log(error.message);
                 this.emit('end');
             }}))
-        .pipe(changed( dist.scripts ))
         .pipe(concat("app.js"))
-        .pipe(uglify())
         .pipe(gulp.dest(dist.scripts));
 });
 
@@ -81,7 +78,6 @@ gulp.task('sass', function() {
             indentedSyntax: false
         }))
         .pipe(concat("style.css"))
-        .pipe(cssnano())
         .pipe(gulp.dest(dist.styles));
 });
 
