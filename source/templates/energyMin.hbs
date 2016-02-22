@@ -15,7 +15,21 @@
 			</ul>
 		</div>
 		<div class="energy-graph">
-			<p>zjguhru</p>
+			<div class="consumption"><span>Average consumption</span><span></span><span>366Wh/mi</span></div>
+			<div class="projected"><span>Projected range</span><span>245mi</span></div>
+			<svg id="test-svg" width="460" height="300" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+				<defs><filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="a"><feGaussianBlur stdDeviation="1.703" in="SourceGraphic" result="blur"/></filter></defs>
+				<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" >
+	        <g id="A4" stroke="#979797" filter="url(#blurMe)"></g>
+        </g>
+       </svg>
+			<script>
+				s = Snap(480, 340);
+
+				var path1 = Snap('#test-svg').path("M0,200.127028 L77.5919005,200.127028 L120.093316,200.127028 L152.360762,200.127028 L193.532196,200.127028 L235.392177,200.127028 L270.841431,200.127028 L313.705239,200.127028 L319.184616,200.127028 L378.084302,200.127028 L431.258182,200.127028 L480,200.127028");
+
+				path1.animate({d: "M0,200.127028 L77.5919005,63.6368657 L120.093316,163.2903 L152.360762,128.292717 L193.532196,0 L235.392177,106.695202 L270.841431,300 L313.705239,223.054194 L319.184616,151.356576 L378.084302,102.408008 L431.258182,206.108388 L480,67.8246462"}, 1500, mina.bounce);
+			</script>
 		</div>
 	</div>
 </div>

@@ -13,7 +13,56 @@
 		width: 86%;
 		&#main-graph {
 			
+			.energy-graph {
+				position: relative;
+				margin-top: 40px;
+				margin-left: 20px;
 
+				div {
+					position: absolute;
+					font-size: 14px;
+					color: $font-color;
+
+					span {
+						display: block;
+					}
+
+					span:first-child {
+						text-transform: uppercase;
+					}
+				}
+
+				.consumption {
+
+					top: 120px;
+					left: 0;
+		
+					span:nth-child(2) {
+
+						content: '';
+						width: 480px;
+						margin: 10px 0;
+						height: 1px;
+						border: none;
+						border-top: 1px dashed $font-color;
+
+					}
+				}
+
+				.projected {
+					top: 60px;
+					right: 0;
+					text-align: right;
+					span {
+						margin-bottom: 10px;
+					}
+				}
+
+				#test-svg {
+					fill: none;
+					stroke: #979797;
+				}
+			}
 		}
 
 	}
