@@ -52,7 +52,7 @@ App.prototype.init = function() {
 	$(window).load(function(){
 		setTimeout(function() {
 			$('#global').fadeIn('slow');
-		}, 4200);
+		}, 200); //5600
 	});
 
 	// Initialise new classes / Call js for each widget
@@ -242,40 +242,58 @@ App.prototype.prepareDrop = function($tile, $main) {
 // Loader
 App.prototype.loader = function() {
 	// Percentage Increment Animation
-	setTimeout(function() {
-		$('#loading-percent').fadeIn('fast', function() {
-			setTimeout(function() {
-				var PercentageID = $("#loading-percent"),
-					start = 1,
-					end = 100,
-					durataion = 2000;
-				animateValue(PercentageID, start, end, durataion);
+	//setTimeout(function() {
+	//	$('#loading-percent').fadeIn('fast', function() {
+	//		setTimeout(function() {
+	//			var PercentageID = $("#loading-percent"),
+	//				start = 1,
+	//				end = 100,
+	//				durataion = 2000;
+	//			animateValue(PercentageID, start, end, durataion);
+    //
+	//			function animateValue(id, start, end, duration) {
+    //
+	//				var range = end - start,
+	//					current = start,
+	//					increment = end > start? 1 : -1,
+	//					stepTime = Math.abs(Math.floor(duration / range)),
+	//					obj = $(id);
+    //
+	//				var timer = setInterval(function() {
+	//					current += increment;
+	//					$(obj).text(current + "%");
+	//					//obj.innerHTML = current;
+	//					if (current == end) {
+	//						clearInterval(timer);
+	//					}
+	//				}, stepTime);
+	//			}
+    //
+	//			setTimeout(function() {
+	//				$('#loading').fadeOut('slow');
+	//			}, 2000);
+	//		}, 100);
+	//	});
+	//}, 1600);
 
-				function animateValue(id, start, end, duration) {
-
-					var range = end - start,
-						current = start,
-						increment = end > start? 1 : -1,
-						stepTime = Math.abs(Math.floor(duration / range)),
-						obj = $(id);
-
-					var timer = setInterval(function() {
-						current += increment;
-						$(obj).text(current + "%");
-						//obj.innerHTML = current;
-						if (current == end) {
-							clearInterval(timer);
-						}
-					}, stepTime);
-				}
-
-				setTimeout(function() {
-					$('#loading').fadeOut('slow');
-				}, 2000);
-			}, 100);
-		});
-	}, 1600);
-
+	//setTimeout(function(){
+	//	$("#loading-content").shuffleLetters({
+	//		"text": 'INITIALIAZING'
+	//	});
+    //
+	//	setTimeout(function(){
+    //
+	//		// Shuffle the container with custom text
+	//		$("#loading-content").shuffleLetters({
+	//			"text": 'TARS IS REBOOTING'
+	//		});
+    //
+	//		setTimeout(function(){
+	//			$("#loading-content").fadeOut();
+	//		},2600);
+    //
+	//	},2300);
+	//},600);
 };
 
 //App.prototype.loadSortable = function() {

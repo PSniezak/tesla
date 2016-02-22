@@ -8,11 +8,11 @@ body {
 }
 
 // Loader
-#particles-js{width:100%;height:100%;background-color:#b61924;background-size:cover;background-position:50% 50%}#particles-js.troll canvas{-webkit-animation:spinning 1.4s infinite;animation:spinning 1.4s infinite}#particles-js .particles-js-canvas-el{-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:1;-webkit-animation:appear 1.4s 1;animation:appear 1.4s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}
+#particles-js{width:100%;height:100%;background-color:#b61924;background-size:cover;background-position:50% 50%}#particles-js.troll canvas{-webkit-animation:spinning 6s infinite;animation:spinning 6s infinite}#particles-js .particles-js-canvas-el{-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:1;-webkit-animation:appear 6s 1;animation:appear 6s 1;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}
 @-webkit-keyframes appear{from{-ms-transform:scale(0);-webkit-transform:scale(0);transform:scale(0);opacity:0}to{-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes appear{from{-ms-transform:scale(0);-webkit-transform:scale(0);transform:scale(0);opacity:0}to{-ms-transform:scale(1);-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes spinning{from{-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spinning{from{-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
 #loading {
   z-index: 2000;
-  width: 100px;
+  width: 100%;
   height: 100px;
 
   position: absolute;
@@ -23,21 +23,12 @@ body {
 
   margin: auto;
 
-  &:after {
-    content: "";
-    display: block;
+  #loading-content {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  #loading-percent {
+    text-align: center;
     color: #f9f9f9;
     font-family: $avenir-light;
-    display: none;
-    font-size:42px;
+    font-size:56px;
   }
 }
 
