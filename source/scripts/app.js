@@ -59,6 +59,8 @@ App.prototype.init = function() {
 	
 	this.widget.music = new Music(); 
 	this.widget.gps = new Gps();
+	this.widget.phone = new Phone();
+	this.widget.footer = new Footer();
 
 };
 

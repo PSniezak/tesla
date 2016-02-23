@@ -90,6 +90,7 @@
 							box-shadow: 0px 0px 100px 40px $white-1;
 							border-radius: 50%;
 							z-index: 1;
+							overflow: hidden;
 
 							&:before {
 								position: absolute;
@@ -104,6 +105,11 @@
 								-webkit-animation: coverTurn 1.3s ease alternate infinite;
 								animation: coverTurn 1.3s ease alternate infinite;
 							}
+
+							img {
+								height: 200px;
+							}
+
 						}
 
 						.infos {
@@ -214,10 +220,10 @@
 
 							.bonus-controls {
 
-								margin-top: 30px;
+								margin-top: 10px;
 
 								span:first-child {
-									margin-right: 100px;
+									margin-right: 60px;
 								}
 							}
 
@@ -1285,6 +1291,7 @@
 						box-shadow: 0px 0px 100px 40px $white-1;
 						border-radius: 50%;
 						z-index: 1;
+						overflow: hidden;
 
 						&:before {
 							position: absolute;
@@ -1297,6 +1304,10 @@
 							border-radius: 50%;
 							z-index: 2;
 						}
+
+						img {
+            	height: 120px;
+            }
 					}
 
 					.infos {

@@ -21,6 +21,14 @@ var Music = function() {
 		cursor: $('.radio-player .cursor')
 	};
 
+	this.music = {
+		controls: {
+			prev: $('#main-music-player .next-prev span:first-child'),
+			play: $('#main-music-player .next-prev span.player'),
+			next: $('#main-music-player .next-prev span:last-child')
+		}
+	};
+
 	this.musicSlides = {
 		nav: this.musicPlayer.find('.nav-top.slide'),
 		items: this.musicPlayer.find('.nav-top.slide li')
@@ -50,6 +58,11 @@ Music.prototype.bind = function() {
 	// Radio controls
 	this.radio.controls.prev.on('click', $.proxy(this.frequenceRadio, this, 'prev'));
 	this.radio.controls.next.on('click', $.proxy(this.frequenceRadio, this, 'next'));
+
+	// Music player controls
+	this.music.controls.prev.on('click', $.proxy(this.changeMusic, this), 'prev');
+	// this.music.controls.play.on('click', $.proxy());
+	this.music.controls.next.on('click', $.proxy(this.changeMusic, this), 'next');
 	
 	// Drop down panel
 	this.dropDown.on('click', $.proxy(this.openDropDown, this));
@@ -62,6 +75,15 @@ Music.prototype.bind = function() {
 
 	// Listen no click happenend since 10s on the music widget
 	this.musicPlayer.on('click', $.proxy(this.listenScroll, this));
+};
+
+
+Music.prototype.changeMusic = function(attr, e) {
+	e.preventDefault();
+
+	// console.log(e.target)
+
+	// console.log(attr);
 };
 
 

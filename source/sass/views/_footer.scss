@@ -2,13 +2,15 @@
 
 #footer {
 	.content {
-		border:1px solid white;
 		width: 1160px;
 		height: 220px;
 		.main{
 			&#main-my-footer {
 				.nav-top {
-					ul{
+
+					position: relative;
+
+					ul {
 							margin-left:170px;
 							margin-right:170px;
 							padding-top:25px;
@@ -18,6 +20,12 @@
 							a{
 							}
 						}
+					}
+
+					p {
+						position: absolute;
+						left: 49%;
+						bottom: -30px;
 					}
 				}
 				.nav-bottom{
@@ -37,25 +45,38 @@
 							}
 						}
 					.temp{
+
 						font-size: 32px;
 						color:$font-color;
+						font-family: $avenir-light;
 						display:inline-block;
 						margin-top:70px;
+
 						.cover{
+
 							width:50px;
 							height:50px;
 							display:inline-block;
 							border:1px solid white;
 							line-height: 48px;
 							border-radius:50%;
-							margin:0 10px 0 10px;
-							.img-gauche{
-								a{
-									img{
-										margin-bottom:10px;
+							margin:0 25px 0 25px;
+
+							a{
+								display: block;
+
+								&.temperature-low {
+									img {
+										padding-bottom: 10px;
+									}
+								}
+								&.temperature-up {
+									img {
+										margin-top: 10px;
 									}
 								}
 							}
+
 						}
 					}
 				}

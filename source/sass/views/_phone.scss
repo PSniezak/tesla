@@ -27,11 +27,28 @@
 		padding: 20px 0;
 
 		.main{
-			&#main-my-phone {
+
+			display: none;
+
+			&.show { display: block; }
+
+			&#main-my-phone,
+			&#main-calling {
+
 				width:100%;
 				padding-top: 0px;
 				margin-left:auto;
 				margin-right:auto;
+
+				.nav-top {
+					margin-bottom: 20px !important;
+					text-transform: uppercase;
+					font-size: 14px;
+				}
+
+			}
+
+			&#main-history {
 
 				.nav-top {
 					margin-bottom: 20px !important;
@@ -58,59 +75,185 @@
 					}
 
 					li {
-						display: -webkit-flex;
-						display: -ms-flexbox;
-						display: flex;
-
-						height: 80px;
-						line-height: 80px;
-						font-size: $size16;
-						color:$font-color;
-
 
 						&:nth-child(odd) {background-color: $white-05;}
-						img{
-							padding:18px;
-						}
-						.first-name {
-							-webkit-flex: 1;
-							-ms-flex: 1;
-							flex: 1;
 
-							max-width: 140px;
-							margin-right: 70px;
-							text-transform: uppercase;
-						}
-						.last-name {
-							-webkit-flex: 1;
-							-ms-flex: 1;
-							flex: 1;
+						a.contain-link {
 
-							text-transform: uppercase;
+							display: -webkit-flex;
+							display: -ms-flexbox;
+							display: flex;
 
-						}
-						.favorite {
-							-webkit-flex: 1;
-							-ms-flex: 1;
-							flex: 1;
-
-							max-width: 140px;
-							margin-right: 20px;
+							height: 80px;
+							line-height: 80px;
+							font-size: $size16;
+							color:$font-color;
 
 							img{
-								display:block;
-								margin:auto;
-								padding-left:15px;
-								padding-top:25px;
-								width:35px;
-								height:30px;
+								padding:18px;
+							}
+							.first-name {
+								-webkit-flex: 1;
+								-ms-flex: 1;
+								flex: 1;
+
+								max-width: 140px;
+								margin-right: 70px;
+								text-transform: uppercase;
+							}
+							.last-name {
+								-webkit-flex: 1;
+								-ms-flex: 1;
+								flex: 1;
+
+								text-transform: uppercase;
 
 							}
+							.favorite {
+								-webkit-flex: 1;
+								-ms-flex: 1;
+								flex: 1;
+
+								max-width: 140px;
+								margin-right: 20px;
+
+								img{
+									display:block;
+									margin:auto;
+									padding-left:15px;
+									padding-top:25px;
+									width:35px;
+									height:30px;
+
+								}
+							}
 						}
+
 					}
 
 				}
+
 			}
+
+			.phone-calling {
+
+				font-family: $avenir-light;
+				text-transform: uppercase;
+				margin: 0 auto;
+				text-align: center;
+
+				.contact-image {
+
+					position: relative;
+					display: inline-block;
+					width: 130px;
+					height: 130px;
+					margin-bottom: 20px;
+					overflow: hidden;
+
+					img {
+						display: inline-block;
+					}
+
+				}
+
+				.contact-name {
+					font-size: 18px;
+					margin-bottom: 15px;
+				}
+
+				.call-duration {
+					display: inline-block;
+					font-size: 16px;
+					color: $white-6;
+					margin-right: 10px;
+
+					&+span {
+						display: inline-block;
+						color: $white-6;
+					}
+				}
+
+				.phone-controls {
+
+					margin-top: 30px;
+
+					img {
+						direction: inline-block;
+						vertical-align: middle;
+					}
+
+					a {
+						display: inline-block;
+					}
+
+					.mute {
+
+					}
+					.hangout {
+						margin: 0 50px;
+					}
+					.plus {
+
+					}
+				}
+
+			}
+
+			.end-call {
+
+				position: absolute;
+				display: none;
+				left: 25%;
+				right: 50px;
+				top: 50px;
+				bottom: 50px;
+				padding-top: 18%;
+				z-index: 10;
+				text-align: center;
+				background-color: rgba(2, 21, 30, 0.8);
+				box-shadow: 0px 0px 40px 40px rgba(2, 21, 30, 0.8);
+
+				.circle {
+
+					position: absolute;
+					display: block;
+					width: 240px;
+					height: 240px;
+					top: 10%;
+					border: 2px solid rgba(255, 100, 100, 0.9);
+					margin-left: 50%;
+					transform: translateX(-50%);
+    			border-radius: 50%;
+
+				}
+
+				.contact-name {
+					font-size: 20px;
+					margin-bottom: 25px;
+					text-transform: uppercase;
+				}
+
+				p:nth-child(3) {
+					font-size: 26px;
+					margin-bottom: 20px;
+				}
+
+				.call-duration {
+					display: inline-block;
+					font-size: 16px;
+					color: $white-6;
+					margin-right: 10px;
+					text-transform: uppercase;
+
+					&+span {
+						display: inline-block;
+						color: $white-6;
+					}
+				}
+
+			}
+
 		}
 
 	}

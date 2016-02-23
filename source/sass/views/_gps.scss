@@ -375,6 +375,10 @@
   
   .content {
 
+    .nav-aside {
+      width: 17% !important;
+    }
+
     .main {
 
       &#main-navigation {
@@ -480,7 +484,8 @@
 
           .bg {
             height: 100%;
-            margin-left: -25%;
+            margin-left: -22%;
+            margin-top: 7%;
             transition: all .4s ease; 
           }
         }
@@ -488,7 +493,7 @@
         .nav-user {
           position: absolute;
           bottom: 10px;
-          left: 39%;
+          left: 42%;
           width: 60px;
           height: 60px;
           border-radius: 50%;
