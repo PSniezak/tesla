@@ -122,10 +122,11 @@ App.prototype.loadDraggable = function() {
 
 	var droppables = $(".box");
 	var dropArea = $("#prm-tile");
-	var dropSecond = $("#snd-tile");
+	var dropSecond = $(".snd");
 	var droppablesDropped = $('.dropped');
 
 	var overlapThreshold = "80%";
+	var overlapThresholdBoxes = "50%";
 	var posX, posY;
 
 	var mainDrag = Draggable.create(droppables, {
@@ -160,28 +161,28 @@ App.prototype.loadDraggable = function() {
 		},
 		onDragEnd: function (e) {
 			$(this.target).trigger('removeDragging');
-			if (!$(this.target).hasClass("highlight")) {
-				if ($(this.target).hasClass('dropped')) {
-					$(this.target).removeClass('dropped').trigger('removeDropped');
+				if (!$(this.target).hasClass("highlight")) {
+					if ($(this.target).hasClass('dropped')) {
+						$(this.target).removeClass('dropped').trigger('removeDropped');
+					}
+					$(this.target).removeClass('deleteSample');
+					TweenLite.to(this.target, 0.2, {
+						x: this.startX,
+						y: this.startY
+					})
+				} else {
+					posX = this.startX;
+					posY = this.startY;
+
+					TweenLite.to(this.target, 0.2, {
+						x: this.startX,
+						y: this.startY
+					})
+
+					$(this.target).removeClass("highlight").trigger('removeDragging');
+					$(this.target).addClass('dropped').trigger('addDropped');
+					$(this.target).removeClass('deleteSample');
 				}
-				$(this.target).removeClass('deleteSample');
-				TweenLite.to(this.target, 0.2, {
-					x: this.startX,
-					y: this.startY
-				})
-			} else {
-				posX = this.startX;
-				posY = this.startY;
-
-				TweenLite.to(this.target, 0.2, {
-					x: this.startX,
-					y: this.startY
-				})
-
-				$(this.target).removeClass("highlight").trigger('removeDragging');
-				$(this.target).addClass('dropped').trigger('addDropped');
-				$(this.target).removeClass('deleteSample');
-			}
 		}
 	});
 
