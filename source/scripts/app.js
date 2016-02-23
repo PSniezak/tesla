@@ -31,6 +31,7 @@ var App = function() {
 	this.divEnergyMin = $('#energy-min');
 
 	this.divFooter = $('#footer');
+	this.divWarning = $('#warning');
 
 	this.bind();
 
@@ -113,6 +114,7 @@ App.prototype.loadTemplates = function() {
 	this.divEnergyMin.append(this.tpl.energyMin);
 
 	this.divFooter.append(this.tpl.footer);
+	this.divWarning.append(this.tpl.warning);
 
 	console.log('= TEMPLATES DONE =');
 };
