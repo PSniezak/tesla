@@ -43,6 +43,12 @@
 					-webkit-justify-content: space-between;
 					-ms-flex-pack: justify;
 					justify-content: space-between;
+					animation: grow 2s ease forwards;
+
+					@-webkit-keyframes grow {
+					  0% {transform: scale(0.95);opacity: 0;}
+					  100% {transform: scale(1);opacity: 1;}
+					}
 
 					.fav {
 						position: absolute;
@@ -95,6 +101,8 @@
 								opacity: 1;
 								border-radius: 50%;
 								z-index: 2;
+								-webkit-animation: coverTurn 1.3s ease alternate infinite;
+								animation: coverTurn 1.3s ease alternate infinite;
 							}
 						}
 

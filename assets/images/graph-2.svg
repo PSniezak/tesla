@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="481px" height="300px" viewBox="0 0 481 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="452px" height="292px" viewBox="0 0 452 292" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
     <title>Path 1</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="A4" sketch:type="MSArtboardGroup" stroke="#979797">
-            <path d="M0,200.127028 L77.5919005,63.6368657 L120.093316,163.2903 L152.360762,128.292717 L193.532196,0 L235.392177,106.695202 L270.841431,300 L313.705239,223.054194 L319.184616,151.356576 L378.084302,102.408008 L431.258182,206.108388 L480,67.8246462" id="Path-1" sketch:type="MSShapeGroup"></path>
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" stroke="#F9F9F9">
+            <path d="M-0.929050804,213.168318 C-0.929050804,213.168318 31.7358012,50.6363656 74.9708658,91.5588996 C118.20593,132.481434 132.824516,289.571916 173.013585,166.295109 C213.202654,43.0183028 248.035275,34.4350883 248.035275,34.4350883 C248.035275,34.4350883 285.897222,-0.669887603 341.794322,184.869334 C397.691422,370.408556 406.240235,257.195987 406.240235,257.195987 L433.387448,90.071231 C433.387448,90.071231 443.272123,-8.60412831 459.070949,-8.60412907" id="Path-1" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

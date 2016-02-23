@@ -60,20 +60,28 @@ Music.prototype.bind = function() {
 	// Top nav bar
 	this.navTop.items.on('click', $.proxy(this.changeMode, this));
 
+	// Listen no click happenend since 10s on the music widget
+	this.musicPlayer.on('click', $.proxy(this.listenScroll, this));
 };
 
-// 
-// CELLE CI NE SERT A RIEN POUR L'INSTANT FUTUR SLIDE DAN FAVORITES OU RADIO PAR EXEMPLE
-// OKAY MEC
-// 
-Music.prototype.slideContent = function(e) {
+
+Music.prototype.listenScroll = function(e) {
 	e.preventDefault();
 
-	var list = $('.slide-container .open'),
-			next = $('.slide-container ul:nth-child('+ Math.floor(Math.random() * 3 + 1)+')');
+	console.log('Start listening');
 
-	$('.slide-container').find('ul').removeClass('open');
-	next.addClass('open');
+	setTimeout(function() {
+		$('#music .main').removeClass('show');
+		$('#music .main').css('display','none');
+
+		$('#music #main-music-player').addClass('show');
+		$('#music #main-music-player').css('display', 'block');
+
+		$('#music .right-list').removeClass('show');
+		$('#music .right-list#fav-list').addClass('show');
+
+		console.log('end timer');
+	}, 2000);
 	
 };
 
@@ -151,6 +159,9 @@ Music.prototype.navMenu = function(e) {
 		}
 
 		this.musicPlayer.find('.main').removeClass('show');
+		this.musicPlayer.find('.main').css('display','none');
+		
+		this.musicPlayer.find('#'+panelId+'').fadeIn();
 		this.musicPlayer.find('#'+panelId+'').addClass('show');
 
 		// Add active for selected panel icon
