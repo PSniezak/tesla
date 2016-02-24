@@ -377,6 +377,14 @@
 
     .nav-aside {
       width: 17% !important;
+      ul{
+        margin-top:0px !important;
+        li{
+          a{
+            padding:28px 0 24px 0 !important;
+          }
+        }
+      }
     }
 
     .main {
