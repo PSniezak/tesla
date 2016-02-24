@@ -81,9 +81,6 @@ Music.prototype.bind = function() {
 Music.prototype.changeMusic = function(attr, e) {
 	e.preventDefault();
 
-	// console.log(e.target)
-
-	// console.log(attr);
 };
 
 
@@ -103,7 +100,7 @@ Music.prototype.listenScroll = function(e) {
 		$('#music .right-list#fav-list').addClass('show');
 
 		console.log('end timer');
-	}, 2000);
+	}, 10000);
 	
 };
 

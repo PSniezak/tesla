@@ -89,6 +89,13 @@
 							margin-bottom: 30px;
 							text-align: center;
 							margin-left:20px;
+							
+							&:last-child {
+								img{
+									width: 35px;
+								}
+							}
+
 							span{
 								position: relative;
 								display: block;
@@ -113,6 +120,7 @@
 									-webkit-transform: translateY(-50%);
 									transform: translateY(-50%);
 									height: 25px;
+									width: 25px;
 								}
 								p{
 									text-transform: uppercase;

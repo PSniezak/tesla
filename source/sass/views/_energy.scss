@@ -8,6 +8,16 @@
 
 #energy-min {
 
+	.nav-aside {
+		li:first-child {
+			img {
+				width: 45px;
+				height: 45px;
+				margin-top: -13px;
+			}
+		}
+	}
+
 	.main {
 		
 		width: 86%;

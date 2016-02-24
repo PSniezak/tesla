@@ -25,6 +25,16 @@
 
 		height: 100%;
 		padding: 20px 0;
+		.nav-aside{
+			ul{
+				margin-top:-10px !important;
+				li{
+					a{
+						padding:20px 0 !important;
+					}
+				}
+			}
+		}
 
 		.main{
 
@@ -183,6 +193,10 @@
 
 					a {
 						display: inline-block;
+						img {
+							width: 60px;
+							height: 60px;
+						}
 					}
 
 					.mute {
