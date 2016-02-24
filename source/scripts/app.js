@@ -135,21 +135,16 @@ App.prototype.loadDraggable = function() {
 
 	var mainDrag = Draggable.create(droppables, {
 		bounds: window,
-		onClick: function() {
-			$(this.target).removeClass("highlight").trigger('removeDragging');
-		},
-		onPress: function () {
+		onDrag: function (e) {
 			$(this.target).trigger('dragging');
 			this.startX = 0;
 			this.startY = 0;
-			$(this.target).css('transform', 'translate3d(0px, 0, 0px)');
 			if ($(this.target).hasClass('dropped')) {
 				this.startX = posX;
 				this.startY = posY;
 				$(this.target).addClass('highlight');
 			}
-		},
-		onDrag: function (e) {
+
 			if (this.hitTest(dropArea, overlapThreshold)) {
 				$(this.target).addClass("highlight").trigger('highlighted');
 			} else {
