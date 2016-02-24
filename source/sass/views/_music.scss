@@ -1075,181 +1075,6 @@
 
 			}
 
-			.radio-player {
-				.fav {
-            a {
-                img{
-                    width:75%;
-                }
-            }
-        }
-
-        .player {
-
-          .cover {
-
-              position: relative;
-              margin: auto;
-              width: 120px;
-              height: 120px;
-              margin-bottom: 15px;
-              line-height: 150px;
-              border: 1px solid $font-color;
-              box-shadow: 0px 0px 100px 40px $white-1;
-              border-radius: 50%;
-              z-index: 1;
-
-              &:before {
-                  position: absolute;
-                  content: '';
-                  left: 0;
-                  width: 117px;
-                  height: 117px;
-                  border: 1px solid #ffa7bb;
-                  opacity: 1;
-                  border-radius: 50%;
-                  z-index: 2;
-              }
-          }
-
-          .infos {
-
-              text-transform: uppercase;
-
-              .radio-name {
-                  font-size: 22px;
-                  margin-bottom: 15px;
-              }
-              .radio-song {
-                  font-size: 20px;
-                  color: $white-6; 
-              }
-          }
-
-          .controls {
-
-              margin-top: 25px;
-
-              .frequence-bar {
-
-                  .bar {
-
-                      position: relative;
-                      width: 280px;
-                      height: 2px;
-                      margin: 0 auto;
-                      margin-bottom: 20px;
-                      text-align: center;
-                      background-color: $font-color;
-
-                      &::before,
-                      &::after {
-
-                          position: absolute;
-                          content: '';
-                          width: 50px;
-                          height: 2px;
-
-                      }
-
-                      &::before {
-                          left: -50px;
-                          background: rgba(249,249,249,1);
-                          background: -webkit-gradient(right top, left top, color-stop(0%, rgba(249,249,249,1)), color-stop(100%, rgba(223,202,200,0)));
-                          background: -webkit-linear-gradient(right, rgba(249,249,249,1) 0%, rgba(223,202,200,0) 100%);
-                      }
-
-                      &::after {
-                          right: -50px;
-                          background: rgba(249,249,249,1);
-                          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(249,249,249,1)), color-stop(100%, rgba(223,202,200,0)));
-                          background: -webkit-linear-gradient(left, rgba(249,249,249,1) 0%, rgba(223,202,200,0) 100%);
-                      }
-
-                      span {
-
-                          position: absolute;
-                          width: 2px;
-                          height: 11px;
-                          background-color: $font-color;
-                          top: -5px;
-                          box-shadow: 0px 0px 40px 1px #f9f9f9;
-                          z-index: 2;
-
-                          &:first-child {
-                              left: 20px;
-                          }
-
-                          &:nth-child(2) {
-                              left: 80px;
-                          }
-
-                          &:nth-child(3) {
-                              height: 25px;
-                              top: -11px;
-                          }
-
-                          &:nth-child(4) {
-                              right: 80px;
-                          }
-
-                          &:nth-child(5) {
-                              right: 20px;
-                          }
-
-                          &.cursor {
-                              height: 20px;
-                              right: 108px;
-                              top: -9px;
-                              background-color: #ffa7bb;
-                              z-index: 3;
-                              transition: all .3s ease-out;
-                          }
-
-                      }
-
-                  }
-
-                  p {
-                      font-size: 20px;
-                      color: $white-6;
-                  }
-
-              }
-
-              .next-prev {
-
-                  width: 80%;
-                  margin: 0 auto;
-
-                  span {
-                      width: 70px;
-                      height: 70px;
-                      line-height: 70px;
-                      background-color: rgba(0, 0, 0, 0);
-                      border-radius: 50%;
-                      float:left;
-
-                      a { 
-                          display: block; 
-                          img{ 
-                              margin-left:auto;
-                              margin-right: auto;
-                              margin-top:-5px;
-                              display: block; 
-                          } 
-                      }
-
-                  }
-
-              }
-
-          }
-
-        }
-
-			}
-
 			.music-player {
 
 				display: -webkit-flex;
@@ -1277,9 +1102,7 @@
 				.player {
 
 					-webkit-flex: 1;
-
 					-ms-flex: 1;
-
 					flex: 1;
 					text-align: center;
 
@@ -1331,85 +1154,47 @@
 					.controls {
 
 						margin-top: 25px;
+						color: $font-color;
 
 						.frequence-bar {
+
+							position: relative;
 
 							.bar {
 
 								position: relative;
-								width: 280px;
+								width: 300px;
 								height: 2px;
 								margin: 0 auto;
 								margin-bottom: 20px;
 								text-align: center;
-								background-color: $font-color;
-
-								&::before,
-								&::after {
-
-									position: absolute;
-									content: '';
-									width: 50px;
-									height: 2px;
-
-								}
-
-								&::before {
-									left: -50px;
-									background: rgba(249,249,249,1);
-									background: -webkit-gradient(right top, left top, color-stop(0%, rgba(249,249,249,1)), color-stop(100%, rgba(223,202,200,0)));
-									background: -webkit-linear-gradient(right, rgba(249,249,249,1) 0%, rgba(223,202,200,0) 100%);
-								}
-
-								&::after {
-									right: -50px;
-									background: rgba(249,249,249,1);
-									background: -webkit-gradient(left top, right top, color-stop(0%, rgba(249,249,249,1)), color-stop(100%, rgba(223,202,200,0)));
-									background: -webkit-linear-gradient(left, rgba(249,249,249,1) 0%, rgba(223,202,200,0) 100%);
-								}
+								background-color: $white-2;
 
 								span {
-
 									position: absolute;
-									width: 2px;
-									height: 11px;
-									background-color: $font-color;
-									top: -5px;
-									box-shadow: 0px 0px 40px 1px #f9f9f9;
-									z-index: 2;
-
-									&:first-child {
-										left: 20px;
-									}
-
-									&:nth-child(2) {
-										left: 80px;
-									}
-
-									&:nth-child(3) {
-										height: 25px;
-										top: -11px;
-									}
-
-									&:nth-child(4) {
-										right: 80px;
-									}
-
-									&:nth-child(5) {
-										right: 20px;
-									}
-
-									&.cursor {
-										height: 20px;
-										right: 108px;
-										top: -9px;
-										background-color: #ffa7bb;
-										z-index: 3;
-										transition: all .3s ease-out;
-									}
-
+									content: '';
+									left: 0;
+									height: 2px;
+									width: 200px;
+									background: -webkit-linear-gradient(left ,#ffa7bb, $font-color);
+									transition: all 3s ease;
 								}
 
+							}
+
+							.start-time,
+							.end-time {
+								position: absolute;
+								top: -5px;
+								font-family: $avenir-book;
+								font-size: 14px;
+							}
+
+							.start-time {
+								left: -45px;
+							}
+							.end-time {
+								right: -45px;
 							}
 
 							p {
