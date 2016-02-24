@@ -64,7 +64,8 @@
 						a {
 							display: block;
 							img{
-								width:75%;
+								width: 40px;
+								height: 40px;
 							}
 						}
 					}
@@ -231,7 +232,14 @@
 
 								span:first-child {
 									margin-right: 60px;
+									img {
+										display: inline-block;
+										vertical-align: middle;
+										width: 29px;
+										height: 29px;							
+									}
 								}
+
 							}
 
 						}
@@ -631,6 +639,10 @@
 				.fav {
 					a {
 						display: block;
+						img {
+							height: 40px;
+							width: 40px;
+						}
 					}
 				}
 
@@ -1096,7 +1108,8 @@
 					a {
 						display: block;
 						img{
-							width:75%;
+							width: 36px;
+							height: 36px;
 						}
 					}
 				}
