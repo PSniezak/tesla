@@ -10,7 +10,13 @@
 
 		.main {
 
-			&#main-radio {padding: 20px 70px 0;}
+			&#main-radio {
+				padding: 20px 70px 0;
+
+				.nav-top {
+					margin-bottom: 80px;
+				}
+			}
 			&#main-my-music {
 				padding-top: 70px;
 
@@ -432,7 +438,7 @@
 				display: block;
 				width: 100%;
 				font-size: 22px;
-				margin-bottom: 80px;
+				margin-bottom: 40px;
 
 				ul {
 
