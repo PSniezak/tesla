@@ -1,23 +1,23 @@
 <div class="content">
-    <div class="shadowing">
+    <div class="shadowing" style="display: none;">
         <div class="opaque"></div>
         <div class="shadow"></div>
+        <div class="close" onclick="$('.shadowing').fadeOut('fast');"><img src="assets/icons/cross.png" alt=""></div>
         <div class="contenu">
             <div class="cover">
                 <img src="assets/icons/warn.png" alt="">
-                <span>Collision approaching detected</span>
+                <p>Collision approaching detected !</p>
             </div>
             <div class="check-emergency">
                 <ul>
                     <li>
-                        <span class="check">Safety check</span>
+                        <span class="check" onclick="$('.shadowing').fadeOut('fast');">Safety check</span>
                     </li>
                     <li>
                         <span class="emergency"><a href="#"><img src="assets/icons/phone-red.png" alt=""></a>Call Emergency</span>
                     </li>
                 </ul>
             </div>
-            <div class="close" onclick="$('.shadowing').css('display', 'none');"><img src="assets/icons/cross.png" alt=""></div>
         </div>
     </div>
 </div>

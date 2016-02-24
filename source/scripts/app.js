@@ -86,6 +86,13 @@ App.prototype.bind = function() {
 		that.prepareDrop($(this), $('.main-active'));
 	});
 
+	$(document).keydown(function(e) {
+		if (e.keyCode == 87) {
+			console.log('salut');
+			$('.shadowing').fadeIn('fast');
+		}
+	});
+
 	//this.boxes.on('removeDropped', function() {
 	//	console.log('deswap');
 	//});
