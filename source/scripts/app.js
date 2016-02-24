@@ -88,9 +88,22 @@ App.prototype.bind = function() {
 
 	$(document).keydown(function(e) {
 		if (e.keyCode == 87) {
-			console.log('salut');
 			$('.shadowing').fadeIn('fast');
 		}
+	});
+
+	$(window).on('click-input', function() {
+		$('#gif-browser').fadeIn('fast');
+		setTimeout(function() {
+			$('#gif-browser > video').get(0).play();
+
+			$('#gif-browser > video').on('ended', function() {
+				$('#input-browser').val('HTTP://EN.WIKIPEDIA.ORG/WIKI/NEM');
+				$('.browser-list').css('display', 'none');
+				$('#search-done').css('display', 'block');
+				$('#gif-browser').fadeOut('fast');
+			});
+		}, 400);
 	});
 
 	//this.boxes.on('removeDropped', function() {
