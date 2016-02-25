@@ -94,6 +94,7 @@ App.prototype.bind = function() {
 
 	$(window).on('click-input', function() {
 		$('#gif-browser').fadeIn('fast');
+
 		setTimeout(function() {
 			$('#gif-browser > video').get(0).play();
 
@@ -105,6 +106,22 @@ App.prototype.bind = function() {
 			});
 		}, 400);
 	});
+
+	$(window).on('search-gps', function() {
+		$('#gif-gps').fadeIn('fast');
+
+		setTimeout(function() {
+			$('#gif-gps > video').get(0).play();
+
+			$('#gif-gps > video').on('ended', function() {
+				$('#gps-min .bg').attr('src', 'assets/images/map-min.png');
+				$('#gps .bg').attr('src', 'assets/images/map.png');
+				$('#gif-gps').fadeOut('fast');
+			});
+		}, 400);
+	});
+
+	$()
 
 	//this.boxes.on('removeDropped', function() {
 	//	console.log('deswap');
