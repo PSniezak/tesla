@@ -1119,6 +1119,22 @@
 					}
 				}
 
+				.bonus-controls {
+
+					margin-top: 10px;
+
+					span:first-child {
+						margin-right: 60px;
+						img {
+							display: inline-block;
+							vertical-align: middle;
+							width: 29px;
+							height: 29px;
+						}
+					}
+
+				}
+
 				.player {
 
 					-webkit-flex: 1;
@@ -1173,7 +1189,7 @@
 
 					.controls {
 
-						margin-top: 25px;
+						margin-top: 20px;
 						color: $font-color;
 
 						.frequence-bar {
@@ -1183,10 +1199,10 @@
 							.bar {
 
 								position: relative;
-								width: 300px;
+								width: 250px;
 								height: 2px;
 								margin: 0 auto;
-								margin-bottom: 20px;
+								margin-bottom: 24px;
 								text-align: center;
 								background-color: $white-2;
 
@@ -1226,7 +1242,7 @@
 
 						.next-prev {
 
-							width: 80%;
+							width: 100%;
 							margin: 0 auto;
 
 							.playlist{
@@ -1241,9 +1257,19 @@
 								width: 70px;
 								height: 70px;
 								line-height: 70px;
+								margin-right:12px;
+								margin-left:12px;
 								/*background-color: $white-1;
 								border-radius: 50%;*/
 								float:left;
+
+								&:nth-child(1) {
+									margin-left:0px;
+								}
+
+								&:nth-child(3) {
+									margin-right:0px;
+								}
 
 								a { 
 									display: block; 

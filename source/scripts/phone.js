@@ -56,6 +56,9 @@ Phone.prototype.hangout = function(e) {
 
 Phone.prototype.call = function(e) {
 	e.preventDefault();
+
+	var audioInit = new Audio('assets/sounds/calling.mp3');
+	audioInit.play();
 	
 	this.phone.panels.removeClass('show');
 	

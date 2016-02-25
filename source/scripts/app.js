@@ -43,6 +43,26 @@ App.prototype.init = function() {
 
 	console.log('= INIT =');
 
+	var audioBG = new Audio('assets/sounds/bg-main.mp3');
+	audioBG.play();
+
+	setTimeout(function() {
+		var vol = 1;
+		var interval = 50;
+
+		var fadeout = setInterval(
+			function() {
+				if (vol >= 0) {
+					vol -= 0.05;
+					audioBG.volume = vol;
+				}
+				else {
+					clearInterval(fadeout);
+					audioBG.pause();
+				}
+			}, interval);
+	}, 5600);
+
 	this.loader();
 	this.loadTemplates();
 	this.loadDraggable();
@@ -52,6 +72,7 @@ App.prototype.init = function() {
 
 	$(window).load(function(){
 		setTimeout(function() {
+			$('#borders').fadeIn('slow');
 			$('#global').fadeIn('slow');
 		}, 200); //5600
 	});
@@ -88,6 +109,8 @@ App.prototype.bind = function() {
 
 	$(document).keydown(function(e) {
 		if (e.keyCode == 87) {
+			var audioInit = new Audio('assets/sounds/collision.mp3');
+			audioInit.play();
 			$('.shadowing').fadeIn('fast');
 		}
 	});
@@ -114,8 +137,14 @@ App.prototype.bind = function() {
 			$('#gif-gps > video').get(0).play();
 
 			$('#gif-gps > video').on('ended', function() {
+				var audioGPS = new Audio('assets/sounds/targetgps.mp3');
+				audioGPS.play();
+
 				$('#gps-min .bg').attr('src', 'assets/images/map-min.png');
 				$('#gps .bg').attr('src', 'assets/images/map.png');
+
+				$('.nav-informations img').show();
+				$('.nav-informations p').show();
 				$('#gif-gps').fadeOut('fast');
 			});
 		}, 400);
@@ -313,24 +342,39 @@ App.prototype.loader = function() {
 	//	});
 	//}, 1600);
 
-	//setTimeout(function(){
-	//	$("#loading-content").shuffleLetters({
-	//		"text": 'INITIALIAZING'
-	//	});
-    //
-	//	setTimeout(function(){
-    //
-	//		// Shuffle the container with custom text
-	//		$("#loading-content").shuffleLetters({
-	//			"text": 'TARS IS REBOOTING'
-	//		});
-    //
-	//		setTimeout(function(){
-	//			$("#loading-content").fadeOut();
-	//		},2600);
-    //
-	//	},2300);
-	//},600);
+	setTimeout(function(){
+		$("#loading-content").shuffleLetters({
+			"text": 'INITIALIAZING'
+		});
+
+		setTimeout(function() {
+			var audioInit = new Audio('assets/sounds/initializing.mp3');
+			audioInit.play();
+		}, 800);
+
+		setTimeout(function(){
+
+			// Shuffle the container with custom text
+			$("#loading-content").shuffleLetters({
+				"text": 'TARS IS REBOOTING'
+			});
+
+			setTimeout(function() {
+				var audioInit = new Audio('assets/sounds/rebooting.mp3');
+				audioInit.play();
+			}, 800);
+
+			setTimeout(function(){
+				$("#loading-content").fadeOut();
+				$('#loading').remove();
+
+				setTimeout(function() {
+					var audioInit = new Audio('assets/sounds/welcome.mp3');
+					audioInit.play();
+				}, 400);
+			},2600);
+		},2300);
+	},600);
 };
 
 //App.prototype.loadSortable = function() {
