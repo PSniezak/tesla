@@ -9,10 +9,16 @@
 		</ul>
 	</div>
     <div class="main show" id="main-my-browser">
-    <form class="search-bar" action="" method="">
-    		<input type=search placeholder="Search Google or type URL"></input>
-				<a href="#"><img src="assets/icons/favorite.svg" alt=""></a>
-    </form>
+        <form class="search-bar" action="" method="">
+            <input id="input-browser" onclick="$('#input-browser').trigger('click-input');" type=search placeholder="Search Google or type URL"></input>
+            <a href="#"><img src="assets/icons/favorites.png" alt=""></a>
+        </form>
+        <div id="search-done">
+            <p>
+                Chả giò (alternatively <span>Nem rán</span> in the Northern Vietnamese dialect), is a popular dish in  <span>Vietnamese cuisine</span> and usually served as an <span>appetizer</span> in Europe and North America, where there are <span>large Vietnamese communities</span>.
+            </p>
+            <p> It is ground meat, usually pork, wrapped in rice paper and deep-fried.</p>
+        </div>
     <div class="browser-list slide-container">
     	<ul class="list">
 			<li>
@@ -35,6 +41,4 @@
 			</li>
 		</ul>
     </div>
-</div>
-</div>
 </div>
