@@ -178,10 +178,10 @@
 								}
 
 								.start-time {
-									left: 180px;
+									left: 175px;
 								}
 								.end-time {
-									right: 180px;
+									right: 175px;
 								}
 
 								p {
@@ -195,6 +195,7 @@
 
 								width: 80%;
 								margin: 0 auto;
+								margin-bottom: 30px;
 
 								.player {
 									a{
@@ -213,6 +214,10 @@
 									border-radius: 50%;*/
 									display: inline-block;
 									vertical-align: middle;
+
+									&:nth-child(2) {
+										margin: 50px 20px 0 20px;
+									}
 
 									a { 
 										display: block; 

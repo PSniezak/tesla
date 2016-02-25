@@ -75,17 +75,20 @@ Music.prototype.bind = function() {
 				trackLength = song.duration,
 				currentTime = 0;
 
-		console.log(trackLength);
-
 		song.ontimeupdate = function() {
 
 			if(song.currentTime == trackLength) {
 				song.currentTime = 0;
 			}
 
-			var progress = (song.currentTime/trackLength*60);
+			var progress = (song.currentTime/trackLength*60),
+					minutes = Math.floor(song.currentTime / 60),
+					minutes = (minutes >= 10 ) ? minutes : "0" + minutes,
+					seconds = Math.floor(song.currentTime % 60),
+					seconds = (seconds >= 10) ? seconds : "0" + seconds;
 
 			$('#main-music-player .frequence-bar .playing-progress').css('width',progress+"%");
+			$('#main-music-player .frequence-bar .start-time').html(minutes+" : "+seconds);
 		};
 
 		if(!song.paused){
@@ -94,7 +97,7 @@ Music.prototype.bind = function() {
 			song.pause();
 		} else {
 
-			$(this).find('img').attr('src', 'assets/icons/pause-large.svg');
+			$(this).find('img').attr('src', 'assets/icons/pause.svg');
 			song.play();
 		}
 		
