@@ -162,7 +162,7 @@
 										content: '';
 										left: 0;
 										height: 2px;
-										width: 200px;
+										width: 0%;
 										background: -webkit-linear-gradient(left ,#ffa7bb, $font-color);
 										transition: all 3s ease;
 									}
@@ -178,10 +178,10 @@
 								}
 
 								.start-time {
-									left: 180px;
+									left: 175px;
 								}
 								.end-time {
-									right: 180px;
+									right: 175px;
 								}
 
 								p {
@@ -195,11 +195,14 @@
 
 								width: 80%;
 								margin: 0 auto;
+								margin-bottom: 30px;
 
-								.playlist{
+								.player {
 									a{
 										img{
-											margin-top:-5px;
+											width: 100px;
+											height: 100px;
+											margin-top:-50px;
 										}
 									}	
 								}
@@ -211,6 +214,10 @@
 									border-radius: 50%;*/
 									display: inline-block;
 									vertical-align: middle;
+
+									&:nth-child(2) {
+										margin: 50px 20px 0 20px;
+									}
 
 									a { 
 										display: block; 
