@@ -39,6 +39,7 @@
             p{
               font-size: 22px;
               text-transform: uppercase;
+              color: $blue;
             }
           }
           span:last-child {
@@ -112,20 +113,19 @@
           .bg {
             height: 100%;
             transform: scale(1);
+            margin-left: -15%;
+            margin-top: -4%;
             transition: all .4s ease; 
           }
         }
 
         .nav-user {
           position: absolute;
-          bottom: 10px;
-          left: 49%;
+          bottom: 19%;
+          left: 41%;
           width: 90px;
           height: 90px;
           border-radius: 50%;
-          box-shadow: 0px 0px 20px 6px $white-1;
-          border: 1px solid $white-2;
-          background-color: rgba(2, 21, 30, 0.4);
           transform: translateX(-50%);
           img {
 
@@ -431,6 +431,7 @@
             p{
               font-size: 22px;
               text-transform: uppercase;
+              color: $blue;
             }
           }
           span:last-child {
@@ -501,27 +502,24 @@
 
           .bg {
             height: 100%;
-            margin-left: -22%;
-            margin-top: 7%;
+            margin-left: -4%;
+            margin-top: 16%;
             transition: all .4s ease; 
           }
         }
 
         .nav-user {
           position: absolute;
-          bottom: 10px;
-          left: 42%;
+          bottom: 15%;
+          left: 39%;
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          box-shadow: 0px 0px 20px 6px $white-1;
-          border: 1px solid $white-2;
-          background-color: rgba(2, 21, 30, 0.4);
           transform: translateX(-50%);
           img {
 
             display: block;
-            height: 30px;
+            height: 60px;
             margin: 0 auto;
             margin-top: 20px;
           }
