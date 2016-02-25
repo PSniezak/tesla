@@ -15,6 +15,9 @@ $white-2: rgba(249, 249, 249, 0.2);
 $white-6: rgba(249, 249, 249, 0.6);
 $blue: #54c6db;
 
+$ls1: 1px;
+$ls2: 2.5px;
+
 $avenir-light : 'Avenir Light';
 $avenir-lightoblique: 'Avenir-LightOblique';
 $avenir-book : 'Avenir Book';
@@ -25,9 +28,15 @@ div { box-sizing: border-box;}
 p {
 	color: $font-color;
 	font-family: $avenir-light;
+	letter-spacing: $ls1;
 }
 a{
 	font-family: $avenir-light;
+	letter-spacing: $ls1;
+}
+
+span {
+	letter-spacing: $ls1;
 }
 
 /* ---------- Imports ---------- */

@@ -412,20 +412,18 @@
           left: 0;
           right: 0;
           font-size: 18px;
+          text-align: center;
           color: $font-color;
           font-family: $avenir-light;
 
           span {
             vertical-align: top;
+            letter-spacing: $ls2;
           }
 
-          span:first-child {
-            margin-left: 20px;
-          }
-          span:nth-child(2) {
+          span:nth-child(1) {
 
             display: inline-block;
-            margin-left: 18%;
 
             img{
               display: none;
@@ -435,12 +433,9 @@
               display: none;
               font-size: 22px;
               text-transform: uppercase;
+              letter-spacing: $ls2;
               color: $blue;
             }
-          }
-          span:last-child {
-            float: right;
-            margin-right: 20px;
           }
         }
 
@@ -507,7 +502,8 @@
           .bg {
             height: 100%;
             margin-left: -4%;
-            transition: all .4s ease; 
+            transition: all .4s ease;
+            margin-top: 80px;
           }
         }
 

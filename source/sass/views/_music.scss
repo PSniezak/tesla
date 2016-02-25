@@ -127,10 +127,12 @@
 							.music-name {
 								font-size: 22px;
 								margin-bottom: 15px;
+								letter-spacing: $ls2;
 							}
 							.music-song {
 								font-size: 20px;
-								color: $white-6; 
+								color: $white-6;
+								letter-spacing: $ls2;
 								span {
 									display: block;
 									margin-bottom: 15px;
@@ -482,6 +484,7 @@
 							background-image: linear-gradient(to bottom, transparent 50%, $font-color 50%);
 							background-repeat: no-repeat;
 							transition: all .3s ease;
+							letter-spacing: $ls2;
 
 							&.active { background-size: 100% 1px; }
 
@@ -703,10 +706,13 @@
 						.radio-name {
 							font-size: 22px;
 							margin-bottom: 25px;
+							letter-spacing: $ls2;
 						}
 						.radio-song {
 							font-size: 20px;
-							color: $white-6; 
+							color: $white-6;
+							letter-spacing: $ls2;
+
 						}
 					}
 
@@ -895,13 +901,17 @@
 							.music-name {
 								font-size: 16px;
 								margin-bottom: 15px;
+								letter-spacing: $ls2;
 							}
 							.music-song {
 								font-size: 14px;
 								color: $white-6;
+								letter-spacing: $ls2;
 								span {
 									display: block;
 									margin-bottom: 10px;
+									letter-spacing: $ls2;
+
 								}
 							}
 						}
@@ -1135,8 +1145,15 @@
 						img {
 							display: inline-block;
 							vertical-align: middle;
-							width: 29px;
-							height: 29px;
+							width: 26pxpx;
+							height: auto;
+							opacity: 0.3;
+						}
+					}
+					span {
+						img {
+							width: 28px;
+							height: auto;
 						}
 					}
 
@@ -1185,12 +1202,14 @@
 						text-transform: uppercase;
 
 						.music-name {
-							font-size: 22px;
+							font-size: 16px;
 							margin-bottom: 15px;
+							letter-spacing: $ls2;
 						}
 						.music-song {
-							font-size: 20px;
-							color: $white-6; 
+							font-size: 16px;
+							color: $white-6;
+							letter-spacing: $ls2;
 						}
 					}
 
@@ -1291,7 +1310,6 @@
 							}
 
 						}
-
 					}
 
 				}
