@@ -74,7 +74,7 @@ App.prototype.init = function() {
 		setTimeout(function() {
 			$('#borders').fadeIn('slow');
 			$('#global').fadeIn('slow');
-		}, 200); //5600
+		}, 5600); //5600
 	});
 
 	// Initialise new classes / Call js for each widget
