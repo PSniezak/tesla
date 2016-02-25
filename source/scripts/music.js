@@ -24,9 +24,10 @@ var Music = function() {
 	this.music = {
 		controls: {
 			prev: $('#main-music-player .next-prev span:first-child'),
-			play: $('#main-music-player .next-prev span.player'),
+			play: $('#main-music-player .next-prev .player'),
 			next: $('#main-music-player .next-prev span:last-child')
-		}
+		},
+		bar: $('#main-music-player .frequence-bar .playing-progress')
 	};
 
 	this.musicSlides = {
@@ -59,10 +60,50 @@ Music.prototype.bind = function() {
 	this.radio.controls.prev.on('click', $.proxy(this.frequenceRadio, this, 'prev'));
 	this.radio.controls.next.on('click', $.proxy(this.frequenceRadio, this, 'next'));
 
+	var song = new Audio('../assets/sounds/marvin_gaye.mp3');
+
 	// Music player controls
-	this.music.controls.prev.on('click', $.proxy(this.changeMusic, this), 'prev');
-	// this.music.controls.play.on('click', $.proxy());
-	this.music.controls.next.on('click', $.proxy(this.changeMusic, this), 'next');
+	this.music.controls.prev.on('click', function(e) {
+		e.preventDefault();
+
+	});
+
+	this.music.controls.play.on('click', function(e) {
+		e.preventDefault();
+
+		var progressMax = 300,
+				trackLength = song.duration,
+				currentTime = 0;
+
+		console.log(trackLength);
+
+		song.ontimeupdate = function() {
+
+			if(song.currentTime == trackLength) {
+				song.currentTime = 0;
+			}
+
+			var progress = (song.currentTime/trackLength*60);
+
+			$('#main-music-player .frequence-bar .playing-progress').css('width',progress+"%");
+		};
+
+		if(!song.paused){
+
+			$(this).find('img').attr('src', 'assets/icons/play-large.svg');
+			song.pause();
+		} else {
+
+			$(this).find('img').attr('src', 'assets/icons/pause-large.svg');
+			song.play();
+		}
+		
+	});
+
+	this.music.controls.next.on('click', function(e) {
+		e.preventDefault();
+
+	});
 	
 	// Drop down panel
 	this.dropDown.on('click', $.proxy(this.openDropDown, this));
@@ -74,14 +115,9 @@ Music.prototype.bind = function() {
 	this.navTop.items.on('click', $.proxy(this.changeMode, this));
 
 	// Listen no click happenend since 10s on the music widget
-	this.musicPlayer.on('click', $.proxy(this.listenScroll, this));
+	$('#music .main li').on('click', $.proxy(this.listenScroll, this));
 };
 
-
-Music.prototype.changeMusic = function(attr, e) {
-	e.preventDefault();
-
-};
 
 
 Music.prototype.listenScroll = function(e) {

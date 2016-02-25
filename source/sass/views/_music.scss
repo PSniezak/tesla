@@ -162,7 +162,7 @@
 										content: '';
 										left: 0;
 										height: 2px;
-										width: 200px;
+										width: 0%;
 										background: -webkit-linear-gradient(left ,#ffa7bb, $font-color);
 										transition: all 3s ease;
 									}
@@ -196,10 +196,12 @@
 								width: 80%;
 								margin: 0 auto;
 
-								.playlist{
+								.player {
 									a{
 										img{
-											margin-top:-5px;
+											width: 100px;
+											height: 100px;
+											margin-top:-50px;
 										}
 									}	
 								}
